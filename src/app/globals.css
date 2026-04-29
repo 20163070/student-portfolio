@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #17211d;
+  background: #f7f1e5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, rgba(189, 101, 71, 0.18), transparent 32rem),
+    linear-gradient(135deg, #f7f1e5 0%, #fffaf1 48%, #edf0df 100%);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: #bd6547;
+  color: #fffaf1;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 lg:px-10;
+}
+
+.section-title {
+  @apply text-3xl font-bold tracking-tight text-ink sm:text-4xl;
+}
+
+.section-kicker {
+  @apply mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-clay;
+}
