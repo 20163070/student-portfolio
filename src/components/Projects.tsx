@@ -5,9 +5,9 @@ export function Projects() {
     <section id="projects" className="section-shell">
       <p className="section-kicker">Projects</p>
       <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-        <h2 className="section-title">示例项目</h2>
+        <h2 className="section-title">项目作品</h2>
         <p className="max-w-xl text-sm leading-6 text-ink/60">
-          这里的数据放在 `src/data/projects.ts`，以后添加真实项目时只需要改数据即可。
+          这里记录我做过的项目。以后添加新作品时，只需要修改 `src/data/projects.ts`。
         </p>
       </div>
       <div className="grid gap-5 md:grid-cols-3">
@@ -28,9 +28,28 @@ export function Projects() {
                 </span>
               ))}
             </div>
-            <a className="mt-6 text-sm font-black text-clay" href={project.link}>
-              了解更多 →
-            </a>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {project.githubUrl ? (
+                <a
+                  className="rounded-full bg-ink px-4 py-2 text-sm font-black text-paper transition hover:bg-clay"
+                  href={project.githubUrl}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  查看代码
+                </a>
+              ) : null}
+              {project.demoUrl ? (
+                <a
+                  className="rounded-full border border-ink/20 px-4 py-2 text-sm font-black text-ink transition hover:border-clay hover:text-clay"
+                  href={project.demoUrl}
+                  rel="noreferrer"
+                  target="_blank"
+                >
+                  在线预览
+                </a>
+              ) : null}
+            </div>
           </article>
         ))}
       </div>

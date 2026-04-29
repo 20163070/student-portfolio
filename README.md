@@ -1,15 +1,15 @@
-# 学生个人作品集网站
+# 学生学习档案网站
 
-这是一个从零创建的个人作品集网站，使用 Next.js、TypeScript 和 Tailwind CSS 构建。项目结构尽量保持简单，适合大一软件工程学生继续学习和维护。
+这是一个用来记录项目、课程 lab、上过的课和学习思考的网站。它使用 Next.js、TypeScript 和 Tailwind CSS 构建，项目结构尽量保持简单，适合大一软件工程学生继续维护。
 
 ## 功能
 
 - 响应式首页
-- Hero、About、Projects、Skills、Contact 五个区块
-- 示例项目数据
+- About、Projects、Labs、Courses、Thoughts、Skills 等区块
+- 项目、实验、课程、思考都放在独立数据文件里
 - 清晰的组件拆分
 - TypeScript 类型支持
-- Tailwind CSS 样式系统
+- GitHub Pages 静态部署
 
 ## 技术栈
 
@@ -27,7 +27,83 @@ src/
     layout.tsx       页面布局和元信息
     page.tsx         首页入口
   components/        页面组件
-  data/              示例项目和技能数据
+  data/              项目、实验、课程、思考、技能数据
+```
+
+## 如何使用这个网站
+
+这个网站不需要后台，也不需要数据库。你以后主要改 `src/data/` 里的文件：
+
+- 项目作品：`src/data/projects.ts`
+- 实验记录：`src/data/labs.ts`
+- 课程学习：`src/data/courses.ts`
+- 思考笔记：`src/data/thoughts.ts`
+- 技能列表：`src/data/skills.ts`
+
+改完之后提交到 GitHub，GitHub Actions 会自动重新部署网站。
+
+## 添加一个项目
+
+打开 `src/data/projects.ts`，在 `projects` 数组里加一段：
+
+```ts
+{
+  title: "我的课程管理系统",
+  description: "一个用于记录课程、作业和考试时间的小项目。",
+  tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+  githubUrl: "https://github.com/20163070/example-project",
+  demoUrl: "https://example.com"
+}
+```
+
+如果暂时没有在线预览，可以不写 `demoUrl`：
+
+```ts
+{
+  title: "算法练习笔记",
+  description: "整理常见算法题和自己的解题思路。",
+  tags: ["TypeScript", "Algorithms"],
+  githubUrl: "https://github.com/20163070/algorithm-notes"
+}
+```
+
+## 添加一条 lab 记录
+
+打开 `src/data/labs.ts`，新增：
+
+```ts
+{
+  title: "Lab 04：数据库基础练习",
+  course: "数据库系统",
+  date: "2026 春季",
+  summary: "练习表设计、主键、外键和简单 SQL 查询。",
+  result: "理解了数据表之间如何建立关系。"
+}
+```
+
+## 添加一门课
+
+打开 `src/data/courses.ts`，新增：
+
+```ts
+{
+  name: "离散数学",
+  semester: "大一",
+  focus: "集合、命题逻辑、图论基础",
+  takeaway: "很多编程问题背后其实是数学结构。"
+}
+```
+
+## 添加一条思考
+
+打开 `src/data/thoughts.ts`，新增：
+
+```ts
+{
+  title: "今天我理解了什么是组件",
+  date: "2026-05",
+  content: "组件不是为了把代码拆散，而是为了让每一块代码有清楚的责任。"
+}
 ```
 
 ## 安装依赖
@@ -68,17 +144,18 @@ npm run start
 
 ## 部署说明
 
-推荐使用 Vercel 部署：
+这个项目已经配置为 GitHub Pages 静态部署。推送到 `codex/portfolio-site` 分支后，GitHub Actions 会自动构建并发布。
 
-1. 将代码推送到 GitHub。
-2. 登录 Vercel。
-3. 导入这个 GitHub 仓库。
-4. Framework Preset 选择 Next.js。
-5. 点击 Deploy。
+网站地址：
 
-也可以部署到支持 Node.js 的服务器。部署前请先运行：
+```txt
+https://20163070.github.io/student-portfolio/
+```
+
+部署前可以先在本地运行：
 
 ```bash
+npm run lint
 npm run build
 ```
 
@@ -86,6 +163,9 @@ npm run build
 
 - 修改个人介绍：编辑 `src/components/About.tsx`
 - 修改项目列表：编辑 `src/data/projects.ts`
+- 修改 lab 记录：编辑 `src/data/labs.ts`
+- 修改课程记录：编辑 `src/data/courses.ts`
+- 修改思考笔记：编辑 `src/data/thoughts.ts`
 - 修改技能列表：编辑 `src/data/skills.ts`
 - 修改联系方式：编辑 `src/components/Contact.tsx`
 - 修改整体颜色：编辑 `tailwind.config.ts` 和 `src/app/globals.css`
@@ -95,7 +175,7 @@ npm run build
 如果你刚开始学习前端，可以按这个顺序继续扩展：
 
 1. 把示例项目替换成自己的真实项目。
-2. 给每个项目添加 GitHub 链接和在线预览链接。
-3. 添加深色模式。
-4. 添加博客或学习笔记页面。
-5. 学习后端后，再加入留言表单或数据库。
+2. 每完成一个 lab，就在 `labs.ts` 里记录目标和收获。
+3. 每门课结束后，在 `courses.ts` 写一句 takeaway。
+4. 每周写一条 `thoughts.ts`，记录自己真正想明白的东西。
+5. 等以后学习后端，再考虑加入登录、数据库和真正的在线上传。
