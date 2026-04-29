@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeHighlight from "rehype-highlight";
+import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import { Navbar } from "@/components/Navbar";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
@@ -11,6 +14,26 @@ function slugify(text: string) {
     .trim()
     .replace(/[^\w\u4e00-\u9fa5]+/g, "-")
     .replace(/^-+|-+$/g, "");
+}
+
+function Callout({
+  children,
+  type = "note",
+}: {
+  children: React.ReactNode;
+  type?: "note" | "tip" | "warning";
+}) {
+  const styles = {
+    note: "border-moss bg-paper",
+    tip: "border-moss bg-cream",
+    warning: "border-clay bg-paper",
+  };
+
+  return (
+    <div className={`my-8 border-l-4 px-6 py-4 shadow-soft ${styles[type]}`}>
+      {children}
+    </div>
+  );
 }
 
 type BlogPostPageProps = {
@@ -87,7 +110,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 h3: ({ children }) => (
                   <h3 id={slugify(String(children))}>{children}</h3>
                 ),
+                blockquote: ({ children }) => {
+                  const text = String(children).toLowerCase();
+                  const type = text.includes("[!warning]")
+                    ? "warning"
+                    : text.includes("[!tip]")
+                      ? "tip"
+                      : "note";
+                  return <Callout type={type}>{children}</Callout>;
+                },
               }}
+              rehypePlugins={[
+                rehypeSlug,
+                [rehypeAutolinkHeadings, { behavior: "wrap" }],
+                rehypeHighlight,
+              ]}
               remarkPlugins={[remarkGfm]}
             >
               {post.content}

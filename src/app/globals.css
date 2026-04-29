@@ -89,6 +89,10 @@ body {
   @apply mt-8 border-l-4 border-clay bg-paper px-6 py-4 text-ink/70 shadow-soft;
 }
 
+.prose-blog blockquote p:first-child {
+  @apply mt-0;
+}
+
 .prose-blog code {
   @apply rounded-md bg-ink/10 px-1.5 py-0.5 text-base font-bold text-ink;
 }
@@ -99,6 +103,21 @@ body {
 
 .prose-blog pre code {
   @apply bg-transparent p-0 text-sm font-normal text-paper;
+}
+
+.prose-blog .hljs-keyword,
+.prose-blog .hljs-built_in,
+.prose-blog .hljs-type {
+  color: #f2c078;
+}
+
+.prose-blog .hljs-string,
+.prose-blog .hljs-number {
+  color: #a9d18e;
+}
+
+.prose-blog .hljs-comment {
+  color: rgba(255, 250, 241, 0.45);
 }
 
 .prose-blog table {

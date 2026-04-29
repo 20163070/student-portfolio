@@ -1,10 +1,13 @@
 import Link from "next/link";
+import { MobileMenu } from "@/components/MobileMenu";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navItems = [
   { label: "Blog", href: "/blog" },
   { label: "Projects", href: "/projects" },
   { label: "Links", href: "/links" },
+  { label: "Archive", href: "/archive" },
+  { label: "Tags", href: "/tags" },
   { label: "About", href: "/about" },
   { label: "Search", href: "/search" },
 ];
@@ -23,6 +26,7 @@ export function Navbar() {
         ))}
         <ThemeToggle />
       </nav>
+      <MobileMenu items={navItems} />
     </header>
   );
 }

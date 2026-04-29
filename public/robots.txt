@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://20163070.github.io/student-portfolio/sitemap.xml

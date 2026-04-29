@@ -13,8 +13,20 @@ const displayFont = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "学生个人作品集",
-  description: "一个使用 Next.js、TypeScript 和 Tailwind CSS 构建的个人作品集网站。",
+  metadataBase: new URL("https://20163070.github.io/student-portfolio"),
+  title: {
+    default: "20163070 | 学生学习档案",
+    template: "%s | 20163070",
+  },
+  description: "记录软件工程学习中的项目、ICS Lab 教程、课程笔记和思考复盘。",
+  openGraph: {
+    title: "20163070 | 学生学习档案",
+    description: "项目、Lab、课程和 Markdown 技术博客。",
+    url: "https://20163070.github.io/student-portfolio",
+    siteName: "20163070 Learning Archive",
+    locale: "zh_CN",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

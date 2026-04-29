@@ -12,6 +12,7 @@ export type PostMeta = {
   summary: string;
   tags: string[];
   readingTime: string;
+  year: string;
 };
 
 export type Post = PostMeta & {
@@ -35,6 +36,10 @@ function estimateReadingTime(content: string) {
   const words = content.trim().split(/\s+/).filter(Boolean).length;
   const minutes = Math.max(1, Math.ceil(words / 220));
   return `${minutes} min read`;
+}
+
+function getYear(date: string) {
+  return date.slice(0, 4) || "Unknown";
 }
 
 function getMarkdownFiles() {
@@ -75,6 +80,7 @@ export function getAllPosts(): PostMeta[] {
         summary: String(data.summary ?? ""),
         tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
         readingTime: estimateReadingTime(content),
+        year: getYear(String(data.date ?? "")),
       };
     })
     .sort((a, b) => b.date.localeCompare(a.date));
@@ -98,7 +104,26 @@ export function getPostBySlug(slug: string): Post | null {
     summary: String(data.summary ?? ""),
     tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
     readingTime: estimateReadingTime(content),
+    year: getYear(String(data.date ?? "")),
     content,
     headings: getHeadings(content),
   };
+}
+
+export function getAllTags() {
+  return Array.from(new Set(getAllPosts().flatMap((post) => post.tags))).sort();
+}
+
+export function getPostsByTag(tag: string) {
+  return getAllPosts().filter((post) =>
+    post.tags.some((postTag) => postTag.toLowerCase() === tag.toLowerCase()),
+  );
+}
+
+export function getPostsByYear() {
+  return getAllPosts().reduce<Record<string, PostMeta[]>>((groups, post) => {
+    groups[post.year] = groups[post.year] ?? [];
+    groups[post.year].push(post);
+    return groups;
+  }, {});
 }

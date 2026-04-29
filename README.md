@@ -10,6 +10,9 @@
 - 清晰的组件拆分
 - TypeScript 类型支持
 - GitHub Pages 静态部署
+- Blog、Projects、Links、About、Search、Tags、Archive 页面
+- Markdown 文章目录、代码高亮、提示块
+- 深色模式和移动端菜单
 
 ## 技术栈
 
@@ -47,6 +50,12 @@ src/content/posts/
 ```
 
 每新增一个 `.md` 文件，网站会自动生成一篇博客文章。
+
+如果要写 ICS Lab 教程，可以先复制模板：
+
+```txt
+templates/ics-lab.md
+```
 
 ## 添加一篇 Markdown 教程
 
@@ -101,6 +110,43 @@ int bitXor(int x, int y) {
 
 ```txt
 /blog/ics-data-lab-guide
+```
+
+## Markdown 提示块
+
+文章里可以写提示块：
+
+```md
+> [!WARNING]
+> 这里写注意事项。
+
+> [!TIP]
+> 这里写技巧。
+```
+
+代码块会自动高亮：
+
+````md
+```c
+int main() {
+  return 0;
+}
+```
+````
+
+## 标签和归档
+
+文章 frontmatter 里的 `tags` 会自动生成标签页：
+
+```txt
+/tags
+/tags/ICS
+```
+
+所有文章也会自动进入归档页：
+
+```txt
+/archive
 ```
 
 改完之后提交到 GitHub，GitHub Actions 会自动重新部署网站。

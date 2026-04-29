@@ -6,12 +6,14 @@ import { Labs } from "@/components/Labs";
 import { BlogPreview } from "@/components/BlogPreview";
 import { Projects } from "@/components/Projects";
 import { Skills } from "@/components/Skills";
+import { SiteStats } from "@/components/SiteStats";
 import { Thoughts } from "@/components/Thoughts";
 
 export default function Home() {
   return (
     <main>
       <Hero />
+      <SiteStats />
       <About />
       <Projects />
       <BlogPreview />
