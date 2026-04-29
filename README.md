@@ -40,6 +40,69 @@ src/
 - 思考笔记：`src/data/thoughts.ts`
 - 技能列表：`src/data/skills.ts`
 
+长教程和博客文章使用 Markdown，放在：
+
+```txt
+src/content/posts/
+```
+
+每新增一个 `.md` 文件，网站会自动生成一篇博客文章。
+
+## 添加一篇 Markdown 教程
+
+在 `src/content/posts/` 下新建文件，比如：
+
+```txt
+ics-data-lab-guide.md
+```
+
+文件开头写文章信息：
+
+```md
+---
+title: "ICS Lab：Data Lab 踩坑记录"
+date: "2026-05-01"
+updated: "2026-05-01"
+summary: "记录我做 ICS Data Lab 时的准备、思路、常见坑和复盘方式。"
+tags:
+  - ICS
+  - Lab
+  - C
+---
+```
+
+下面就可以正常写 Markdown：
+
+```md
+## 写前须知
+
+这里写 lab 背景、注意事项和自己的理解。
+
+## 常见坑
+
+- 不要直接抄答案。
+- 先手算小例子。
+- 注意边界情况。
+
+```c
+int bitXor(int x, int y) {
+  return ~(~(x & ~y) & ~(~x & y));
+}
+```
+```
+
+写完后访问：
+
+```txt
+/blog/文件名
+```
+
+例如：
+
+```txt
+/blog/ics-data-lab-guide
+```
+
 改完之后提交到 GitHub，GitHub Actions 会自动重新部署网站。
 
 ## 添加一个项目

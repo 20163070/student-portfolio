@@ -7,6 +7,11 @@
   background: #f7f1e5;
 }
 
+:root.dark {
+  color: #f7f1e5;
+  background: #121714;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -24,6 +29,12 @@ body {
   font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
 }
 
+.dark body {
+  background:
+    radial-gradient(circle at top left, rgba(189, 101, 71, 0.16), transparent 32rem),
+    linear-gradient(135deg, #121714 0%, #1b241f 48%, #2c3125 100%);
+}
+
 ::selection {
   background: #bd6547;
   color: #fffaf1;
@@ -39,4 +50,62 @@ body {
 
 .section-kicker {
   @apply mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-clay;
+}
+
+.prose-blog {
+  @apply max-w-none text-lg leading-9 text-ink/70;
+}
+
+.prose-blog h2 {
+  @apply mt-14 border-t border-ink/10 pt-10 text-3xl font-black tracking-tight text-ink;
+}
+
+.prose-blog h3 {
+  @apply mt-10 text-2xl font-black text-ink;
+}
+
+.prose-blog p {
+  @apply mt-5;
+}
+
+.prose-blog ul,
+.prose-blog ol {
+  @apply mt-5 space-y-2 pl-6;
+}
+
+.prose-blog ul {
+  @apply list-disc;
+}
+
+.prose-blog ol {
+  @apply list-decimal;
+}
+
+.prose-blog a {
+  @apply font-bold text-clay underline decoration-clay/30 underline-offset-4;
+}
+
+.prose-blog blockquote {
+  @apply mt-8 border-l-4 border-clay bg-paper px-6 py-4 text-ink/70 shadow-soft;
+}
+
+.prose-blog code {
+  @apply rounded-md bg-ink/10 px-1.5 py-0.5 text-base font-bold text-ink;
+}
+
+.prose-blog pre {
+  @apply mt-6 overflow-x-auto rounded-2xl bg-ink p-5 text-sm leading-7 text-paper shadow-soft;
+}
+
+.prose-blog pre code {
+  @apply bg-transparent p-0 text-sm font-normal text-paper;
+}
+
+.prose-blog table {
+  @apply mt-6 w-full overflow-hidden rounded-2xl border border-ink/10 bg-paper text-base;
+}
+
+.prose-blog th,
+.prose-blog td {
+  @apply border-b border-ink/10 px-4 py-3 text-left;
 }
