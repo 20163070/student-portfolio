@@ -1,4 +1,10 @@
-````md
+---
+title:ICS Bomb Lab 教程：从汇编到输入推理
+date:"2026-5-10"
+updated:"2026-5-10"
+tags:
+    -ICS
+---
 # ICS Bomb Lab 教程：从汇编到输入推理
 
 > 作者：20163070  
