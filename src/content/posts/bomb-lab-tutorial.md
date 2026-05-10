@@ -1,9 +1,13 @@
 ---
-title:ICS Bomb Lab 教程：从汇编到输入推理
-date:"2026-5-10"
-updated:"2026-5-10"
+title: "ICS Bomb Lab：从汇编到输入推理"
+date: "2026-05-10"
+updated: "2026-05-10"
+summary: "记录 Bomb Lab 的 GDB 调试、汇编阅读和输入推理过程。"
 tags:
-    -ICS
+  - ICS
+  - Lab
+  - GDB
+  - Assembly
 ---
 # ICS Bomb Lab 教程：从汇编到输入推理
 
