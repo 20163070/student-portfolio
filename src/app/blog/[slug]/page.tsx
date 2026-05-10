@@ -1,9 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeHighlight from "rehype-highlight";
-import rehypeSlug from "rehype-slug";
 import remarkGfm from "remark-gfm";
 import { Navbar } from "@/components/Navbar";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
@@ -14,6 +12,10 @@ function slugify(text: string) {
     .trim()
     .replace(/[^\w\u4e00-\u9fa5]+/g, "-")
     .replace(/^-+|-+$/g, "");
+}
+
+function headingText(children: React.ReactNode) {
+  return Array.isArray(children) ? children.join("") : String(children);
 }
 
 function Callout({
@@ -104,27 +106,25 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <div className="prose-blog mt-12">
             <ReactMarkdown
               components={{
-                h2: ({ children }) => (
-                  <h2 id={slugify(String(children))}>{children}</h2>
-                ),
-                h3: ({ children }) => (
-                  <h3 id={slugify(String(children))}>{children}</h3>
-                ),
+                h2: ({ children }) => {
+                  const text = headingText(children);
+                  return <h2 id={slugify(text)}>{children}</h2>;
+                },
+                h3: ({ children }) => {
+                  const text = headingText(children);
+                  return <h3 id={slugify(text)}>{children}</h3>;
+                },
                 blockquote: ({ children }) => {
                   const text = String(children).toLowerCase();
                   const type = text.includes("[!warning]")
                     ? "warning"
-                    : text.includes("[!tip]")
+                    : text.includes("[!tip")
                       ? "tip"
                       : "note";
                   return <Callout type={type}>{children}</Callout>;
                 },
               }}
-              rehypePlugins={[
-                rehypeSlug,
-                [rehypeAutolinkHeadings, { behavior: "wrap" }],
-                rehypeHighlight,
-              ]}
+              rehypePlugins={[rehypeHighlight]}
               remarkPlugins={[remarkGfm]}
             >
               {post.content}

@@ -35,6 +35,62 @@ body {
     linear-gradient(135deg, #121714 0%, #1b241f 48%, #2c3125 100%);
 }
 
+.dark .text-ink,
+.dark .text-ink\/75,
+.dark .text-ink\/70,
+.dark .text-ink\/68,
+.dark .text-ink\/65,
+.dark .text-ink\/60,
+.dark .text-ink\/58,
+.dark .text-ink\/50,
+.dark .text-ink\/45,
+.dark .text-ink\/35 {
+  color: rgba(247, 241, 229, 0.88);
+}
+
+.dark .text-ink\/70,
+.dark .text-ink\/68,
+.dark .text-ink\/65,
+.dark .text-ink\/60,
+.dark .text-ink\/58 {
+  color: rgba(247, 241, 229, 0.68);
+}
+
+.dark .text-ink\/50,
+.dark .text-ink\/45,
+.dark .text-ink\/35 {
+  color: rgba(247, 241, 229, 0.48);
+}
+
+.dark .bg-paper,
+.dark .bg-paper\/80,
+.dark .bg-paper\/85 {
+  background-color: rgba(27, 36, 31, 0.92);
+}
+
+.dark .bg-cream {
+  background-color: rgba(247, 241, 229, 0.08);
+}
+
+.dark .bg-ink {
+  background-color: #f7f1e5;
+}
+
+.dark .text-paper {
+  color: #17211d;
+}
+
+.dark .border-ink\/10,
+.dark .border-ink\/15,
+.dark .border-ink\/20 {
+  border-color: rgba(247, 241, 229, 0.14);
+}
+
+.dark input {
+  background-color: rgba(27, 36, 31, 0.96);
+  color: #f7f1e5;
+}
+
 ::selection {
   background: #bd6547;
   color: #fffaf1;

@@ -70,18 +70,31 @@ export function getAllPosts(): PostMeta[] {
       const slug = fileName.replace(/\.md$/, "");
       const fullPath = path.join(postsDirectory, fileName);
       const fileContent = fs.readFileSync(fullPath, "utf8");
-      const { data, content } = matter(fileContent);
 
-      return {
-        slug,
-        title: String(data.title ?? slug),
-        date: String(data.date ?? ""),
-        updated: data.updated ? String(data.updated) : undefined,
-        summary: String(data.summary ?? ""),
-        tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
-        readingTime: estimateReadingTime(content),
-        year: getYear(String(data.date ?? "")),
-      };
+      try {
+        const { data, content } = matter(fileContent);
+
+        return {
+          slug,
+          title: String(data.title ?? slug),
+          date: String(data.date ?? ""),
+          updated: data.updated ? String(data.updated) : undefined,
+          summary: String(data.summary ?? ""),
+          tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
+          readingTime: estimateReadingTime(content),
+          year: getYear(String(data.date ?? "")),
+        };
+      } catch {
+        return {
+          slug,
+          title: slug,
+          date: "",
+          summary: "这篇文章的 frontmatter 格式需要修复。",
+          tags: ["draft"],
+          readingTime: "1 min read",
+          year: "Unknown",
+        };
+      }
     })
     .sort((a, b) => b.date.localeCompare(a.date));
 }
@@ -94,20 +107,51 @@ export function getPostBySlug(slug: string): Post | null {
   }
 
   const fileContent = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContent);
 
-  return {
-    slug,
-    title: String(data.title ?? slug),
-    date: String(data.date ?? ""),
-    updated: data.updated ? String(data.updated) : undefined,
-    summary: String(data.summary ?? ""),
-    tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
-    readingTime: estimateReadingTime(content),
-    year: getYear(String(data.date ?? "")),
-    content,
-    headings: getHeadings(content),
-  };
+  try {
+    const { data, content } = matter(fileContent);
+
+    return {
+      slug,
+      title: String(data.title ?? slug),
+      date: String(data.date ?? ""),
+      updated: data.updated ? String(data.updated) : undefined,
+      summary: String(data.summary ?? ""),
+      tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
+      readingTime: estimateReadingTime(content),
+      year: getYear(String(data.date ?? "")),
+      content,
+      headings: getHeadings(content),
+    };
+  } catch {
+    const content = [
+      "## Frontmatter 格式需要修复",
+      "",
+      "这篇文章开头的 YAML frontmatter 格式有问题。请确认文件第一行是 `---`，并且 `title`、`summary` 等含冒号的字段使用双引号。",
+      "",
+      "```md",
+      "---",
+      "title: \"文章标题\"",
+      "date: \"2026-05-10\"",
+      "summary: \"一句话简介\"",
+      "tags:",
+      "  - ICS",
+      "---",
+      "```",
+    ].join("\n");
+
+    return {
+      slug,
+      title: slug,
+      date: "",
+      summary: "这篇文章的 frontmatter 格式需要修复。",
+      tags: ["draft"],
+      readingTime: "1 min read",
+      year: "Unknown",
+      content,
+      headings: getHeadings(content),
+    };
+  }
 }
 
 export function getAllTags() {
