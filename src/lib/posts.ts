@@ -32,6 +32,14 @@ function slugify(text: string) {
     .replace(/^-+|-+$/g, "");
 }
 
+function uniqueHeadingId(baseId: string, counts: Map<string, number>) {
+  const safeBaseId = baseId || "section";
+  const count = counts.get(safeBaseId) ?? 0;
+  counts.set(safeBaseId, count + 1);
+
+  return count === 0 ? safeBaseId : `${safeBaseId}-${count + 1}`;
+}
+
 function estimateReadingTime(content: string) {
   const words = content.trim().split(/\s+/).filter(Boolean).length;
   const minutes = Math.max(1, Math.ceil(words / 220));
@@ -53,12 +61,14 @@ function getMarkdownFiles() {
 }
 
 function getHeadings(content: string) {
+  const counts = new Map<string, number>();
+
   return content
     .split("\n")
     .map((line) => /^(#{2,3})\s+(.+)$/.exec(line))
     .filter((match): match is RegExpExecArray => Boolean(match))
     .map((match) => ({
-      id: slugify(match[2]),
+      id: uniqueHeadingId(slugify(match[2]), counts),
       text: match[2],
       level: match[1].length,
     }));

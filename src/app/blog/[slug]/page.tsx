@@ -18,6 +18,10 @@ function headingText(children: React.ReactNode) {
   return Array.isArray(children) ? children.join("") : String(children);
 }
 
+function fallbackHeadingId(text: string) {
+  return slugify(text) || "section";
+}
+
 function Callout({
   children,
   type = "note",
@@ -74,6 +78,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  let headingIndex = 0;
+
   return (
     <main>
       <Navbar />
@@ -108,11 +114,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               components={{
                 h2: ({ children }) => {
                   const text = headingText(children);
-                  return <h2 id={slugify(text)}>{children}</h2>;
+                  const id = post.headings[headingIndex]?.id ?? fallbackHeadingId(text);
+                  headingIndex += 1;
+                  return <h2 id={id}>{children}</h2>;
                 },
                 h3: ({ children }) => {
                   const text = headingText(children);
-                  return <h3 id={slugify(text)}>{children}</h3>;
+                  const id = post.headings[headingIndex]?.id ?? fallbackHeadingId(text);
+                  headingIndex += 1;
+                  return <h3 id={id}>{children}</h3>;
                 },
                 blockquote: ({ children }) => {
                   const text = String(children).toLowerCase();

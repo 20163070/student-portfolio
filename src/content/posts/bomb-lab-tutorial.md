@@ -43,7 +43,7 @@ Bomb Lab 的本质不是“猜六行答案”，而是：
 bomb
 bomb.c
 README
-````
+```
 
 ### 1.2 常用工具
 
@@ -1406,7 +1406,7 @@ quit
 
 ```asm
 TODO
-````
+```
 
 ## 3. 输入格式
 
@@ -1474,7 +1474,7 @@ TODO
 git add .
 git commit -m "study: add bomb lab phase 1 tutorial"
 git push
-````
+```
 
 持续更新：
 
@@ -1503,6 +1503,3 @@ Bomb Lab 教程最重要的不是答案，而是这条链：
 > 下次遇到类似汇编，我该怎么拆。
 
 那这篇教程就不是作业记录，而是你的 ICS 能力作品。
-
-```
-```

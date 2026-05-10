@@ -74,9 +74,29 @@ body {
 
 .dark .bg-ink {
   background-color: #f7f1e5;
+  color: #17211d;
+}
+
+.dark .bg-ink .text-paper,
+.dark .bg-ink.text-paper {
+  color: #17211d;
+}
+
+.dark .bg-clay {
+  background-color: #d98163;
+  color: #121714;
 }
 
 .dark .text-paper {
+  color: #f7f1e5;
+}
+
+.dark .bg-ink a,
+.dark .bg-ink span,
+.dark .bg-ink p,
+.dark .bg-ink h1,
+.dark .bg-ink h2,
+.dark .bg-ink h3 {
   color: #17211d;
 }
 
@@ -157,8 +177,17 @@ body {
   @apply mt-6 overflow-x-auto rounded-2xl bg-ink p-5 text-sm leading-7 text-paper shadow-soft;
 }
 
+.dark .prose-blog pre {
+  background-color: #0d1511;
+  color: #f7f1e5;
+}
+
 .prose-blog pre code {
   @apply bg-transparent p-0 text-sm font-normal text-paper;
+}
+
+.dark .prose-blog pre code {
+  color: #f7f1e5;
 }
 
 .prose-blog .hljs-keyword,
