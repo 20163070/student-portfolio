@@ -1,26 +1,20 @@
+import { Hero } from "@/components/Hero";
+import { Projects } from "@/components/Projects";
+import { Engineering } from "@/components/Engineering";
+import { BlogPreview } from "@/components/BlogPreview";
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
-import { Courses } from "@/components/Courses";
-import { Hero } from "@/components/Hero";
-import { Labs } from "@/components/Labs";
-import { BlogPreview } from "@/components/BlogPreview";
-import { Projects } from "@/components/Projects";
-import { Skills } from "@/components/Skills";
-import { SiteStats } from "@/components/SiteStats";
-import { Thoughts } from "@/components/Thoughts";
-
+export const metadata = {
+  alternates: { canonical: "https://20163070.github.io/student-portfolio/" },
+};
 export default function Home() {
   return (
     <main>
       <Hero />
-      <SiteStats />
-      <About />
       <Projects />
+      <Engineering />
       <BlogPreview />
-      <Labs />
-      <Courses />
-      <Thoughts />
-      <Skills />
+      <About />
       <Contact />
     </main>
   );

@@ -1,0 +1,22 @@
+import type { MetadataRoute } from "next";
+import { projects } from "@/data/projects";
+import { getAllPosts, getAllTags } from "@/lib/posts";
+import { siteUrl } from "@/lib/site";
+export const dynamic = "force-static";
+export default function sitemap(): MetadataRoute.Sitemap {
+  const routes = [
+    "",
+    "/about",
+    "/projects",
+    "/learning",
+    "/blog",
+    "/links",
+    "/archive",
+    "/search",
+    "/tags",
+    ...projects.map((p) => "/projects/" + p.slug),
+    ...getAllPosts().map((p) => "/blog/" + p.slug),
+    ...getAllTags().map((tag) => "/tags/" + encodeURIComponent(tag)),
+  ];
+  return routes.map((route) => ({ url: siteUrl + route + "/" }));
+}

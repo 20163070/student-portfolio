@@ -5,22 +5,32 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint ."
+    "start": "node scripts/preview.mjs",
+    "lint": "eslint .",
+    "preview": "node scripts/preview.mjs",
+    "typecheck": "tsc --noEmit",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
+    "mdast-util-to-string": "^4.0.0",
     "next": "^15.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-markdown": "^10.1.0",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-highlight": "^7.0.2",
+    "rehype-katex": "^7.0.1",
     "rehype-slug": "^6.0.0",
-    "remark-gfm": "^4.0.1"
+    "remark-gfm": "^4.0.1",
+    "remark-math": "^6.0.0",
+    "remark-parse": "^11.0.0",
+    "unified": "^11.0.5"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
     "@eslint/eslintrc": "^3.0.0",
+    "@playwright/test": "^1.64.0",
     "@types/node": "^22.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
@@ -28,6 +38,7 @@
     "eslint": "^9.0.0",
     "eslint-config-next": "^15.0.0",
     "postcss": "^8.0.0",
+    "prettier": "^3.9.9",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.0.0"
   }

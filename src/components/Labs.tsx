@@ -6,7 +6,7 @@ export function Labs() {
       <p className="section-kicker">Labs</p>
       <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <h2 className="section-title">实验记录</h2>
-        <p className="max-w-xl text-sm leading-6 text-ink/60">
+        <p className="max-w-xl text-sm leading-6 text-ink/70">
           这里记录课程 lab、实验目标和我从中学到的东西。
         </p>
       </div>
@@ -21,7 +21,9 @@ export function Labs() {
                 <h3 className="text-xl font-black text-ink">{lab.title}</h3>
                 <p className="mt-1 text-sm font-bold text-clay">{lab.course}</p>
               </div>
-              <span className="text-sm font-semibold text-ink/50">{lab.date}</span>
+              <span className="text-sm font-semibold text-ink/70">
+                {lab.date}
+              </span>
             </div>
             <p className="mt-4 leading-7 text-ink/68">{lab.summary}</p>
             <p className="mt-3 rounded-2xl bg-cream px-4 py-3 text-sm leading-6 text-ink/70">

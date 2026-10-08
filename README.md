@@ -1,290 +1,70 @@
-# 学生学习档案网站
+# 20163070 / Developer Portfolio
 
-这是一个用来记录项目、课程 lab、上过的课和学习思考的网站。它使用 Next.js、TypeScript 和 Tailwind CSS 构建，项目结构尽量保持简单，适合大一软件工程学生继续维护。
+复旦大学 2025 级本科生，关注 Harness、算法与 AI Infra。基于 Next.js、TypeScript、Tailwind CSS 与 Markdown 的静态作品集。
 
-## 功能
+## 本地开发
 
-- 响应式首页
-- About、Projects、Labs、Courses、Thoughts、Skills 等区块
-- 项目、实验、课程、思考都放在独立数据文件里
-- 清晰的组件拆分
-- TypeScript 类型支持
-- GitHub Pages 静态部署
-- Blog、Projects、Links、About、Search、Tags、Archive 页面
-- Markdown 文章目录、代码高亮、提示块
-- 深色模式和移动端菜单
+要求 Node.js 22+。首次运行：
 
-## 技术栈
-
-- Next.js
-- TypeScript
-- Tailwind CSS
-- ESLint
-
-## 项目结构
-
-```txt
-src/
-  app/
-    globals.css      全局样式
-    layout.tsx       页面布局和元信息
-    page.tsx         首页入口
-  components/        页面组件
-  data/              项目、实验、课程、思考、技能数据
-```
-
-## 如何使用这个网站
-
-这个网站不需要后台，也不需要数据库。你以后主要改 `src/data/` 里的文件：
-
-- 项目作品：`src/data/projects.ts`
-- 实验记录：`src/data/labs.ts`
-- 课程学习：`src/data/courses.ts`
-- 思考笔记：`src/data/thoughts.ts`
-- 技能列表：`src/data/skills.ts`
-
-长教程和博客文章使用 Markdown，放在：
-
-```txt
-src/content/posts/
-```
-
-每新增一个 `.md` 文件，网站会自动生成一篇博客文章。
-
-如果要写 ICS Lab 教程，可以先复制模板：
-
-```txt
-templates/ics-lab.md
-```
-
-## 添加一篇 Markdown 教程
-
-在 `src/content/posts/` 下新建文件，比如：
-
-```txt
-ics-data-lab-guide.md
-```
-
-文件开头写文章信息：
-
-```md
----
-title: "ICS Lab：Data Lab 踩坑记录"
-date: "2026-05-01"
-updated: "2026-05-01"
-summary: "记录我做 ICS Data Lab 时的准备、思路、常见坑和复盘方式。"
-tags:
-  - ICS
-  - Lab
-  - C
----
-```
-
-下面就可以正常写 Markdown：
-
-```md
-## 写前须知
-
-这里写 lab 背景、注意事项和自己的理解。
-
-## 常见坑
-
-- 不要直接抄答案。
-- 先手算小例子。
-- 注意边界情况。
-
-```c
-int bitXor(int x, int y) {
-  return ~(~(x & ~y) & ~(~x & y));
-}
-```
-```
-
-写完后访问：
-
-```txt
-/blog/文件名
-```
-
-例如：
-
-```txt
-/blog/ics-data-lab-guide
-```
-
-## Markdown 提示块
-
-文章里可以写提示块：
-
-```md
-> [!WARNING]
-> 这里写注意事项。
-
-> [!TIP]
-> 这里写技巧。
-```
-
-代码块会自动高亮：
-
-````md
-```c
-int main() {
-  return 0;
-}
-```
-````
-
-## 标签和归档
-
-文章 frontmatter 里的 `tags` 会自动生成标签页：
-
-```txt
-/tags
-/tags/ICS
-```
-
-所有文章也会自动进入归档页：
-
-```txt
-/archive
-```
-
-改完之后提交到 GitHub，GitHub Actions 会自动重新部署网站。
-
-## 添加一个项目
-
-打开 `src/data/projects.ts`，在 `projects` 数组里加一段：
-
-```ts
-{
-  title: "我的课程管理系统",
-  description: "一个用于记录课程、作业和考试时间的小项目。",
-  tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-  githubUrl: "https://github.com/20163070/example-project",
-  demoUrl: "https://example.com"
-}
-```
-
-如果暂时没有在线预览，可以不写 `demoUrl`：
-
-```ts
-{
-  title: "算法练习笔记",
-  description: "整理常见算法题和自己的解题思路。",
-  tags: ["TypeScript", "Algorithms"],
-  githubUrl: "https://github.com/20163070/algorithm-notes"
-}
-```
-
-## 添加一条 lab 记录
-
-打开 `src/data/labs.ts`，新增：
-
-```ts
-{
-  title: "Lab 04：数据库基础练习",
-  course: "数据库系统",
-  date: "2026 春季",
-  summary: "练习表设计、主键、外键和简单 SQL 查询。",
-  result: "理解了数据表之间如何建立关系。"
-}
-```
-
-## 添加一门课
-
-打开 `src/data/courses.ts`，新增：
-
-```ts
-{
-  name: "离散数学",
-  semester: "大一",
-  focus: "集合、命题逻辑、图论基础",
-  takeaway: "很多编程问题背后其实是数学结构。"
-}
-```
-
-## 添加一条思考
-
-打开 `src/data/thoughts.ts`，新增：
-
-```ts
-{
-  title: "今天我理解了什么是组件",
-  date: "2026-05",
-  content: "组件不是为了把代码拆散，而是为了让每一块代码有清楚的责任。"
-}
-```
-
-## 安装依赖
-
-```bash
-npm install
-```
-
-## 本地运行
-
-```bash
+```sh
+npm ci
 npm run dev
 ```
 
-打开浏览器访问：
+访问 http://localhost:3000 。开发预览不带仓库子路径。
 
-```txt
-http://localhost:3000
-```
+## 检查与静态预览
 
-## 代码检查
-
-```bash
+```sh
 npm run lint
-```
-
-## 构建项目
-
-```bash
+npm run typecheck
 npm run build
+npm run preview
 ```
 
-## 生产环境运行
+普通静态构建访问 http://127.0.0.1:4173/ 。GitHub Pages 子路径验证，在 PowerShell 中运行：
 
-```bash
-npm run start
-```
-
-## 部署说明
-
-这个项目已经配置为 GitHub Pages 静态部署。推送到 `codex/portfolio-site` 分支后，GitHub Actions 会自动构建并发布。
-
-网站地址：
-
-```txt
-https://20163070.github.io/student-portfolio/
-```
-
-部署前可以先在本地运行：
-
-```bash
-npm run lint
+```powershell
+$env:PORTFOLIO_GITHUB_PAGES = 'true'
 npm run build
+npm run preview
 ```
 
-## 如何修改内容
+访问 http://127.0.0.1:4173/student-portfolio/ 。测试后清除环境变量：
 
-- 修改个人介绍：编辑 `src/components/About.tsx`
-- 修改项目列表：编辑 `src/data/projects.ts`
-- 修改 lab 记录：编辑 `src/data/labs.ts`
-- 修改课程记录：编辑 `src/data/courses.ts`
-- 修改思考笔记：编辑 `src/data/thoughts.ts`
-- 修改技能列表：编辑 `src/data/skills.ts`
-- 修改联系方式：编辑 `src/components/Contact.tsx`
-- 修改整体颜色：编辑 `tailwind.config.ts` 和 `src/app/globals.css`
+```powershell
+Remove-Item Env:PORTFOLIO_GITHUB_PAGES
+```
 
-## 学习建议
+预览服务会根据产物自动识别子路径。使用 Ctrl+C 停止。
 
-如果你刚开始学习前端，可以按这个顺序继续扩展：
+## 浏览器回归检查
 
-1. 把示例项目替换成自己的真实项目。
-2. 每完成一个 lab，就在 `labs.ts` 里记录目标和收获。
-3. 每门课结束后，在 `courses.ts` 写一句 takeaway。
-4. 每周写一条 `thoughts.ts`，记录自己真正想明白的东西。
-5. 等以后学习后端，再考虑加入登录、数据库和真正的在线上传。
+```sh
+npx playwright install chromium
+npm run test:e2e
+```
+
+先构建，再测试。覆盖静态导出页面、内部链接与资源、文章目录、移动端导航、主题记忆和文章搜索。默认仅绑定本机地址。
+
+## 内容维护
+
+- 个人资料：src/data/profile.ts。
+- 项目唯一数据源：src/data/projects.ts。支持 problem、myRole、techStack、architecture、challenges、results、screenshots、githubUrl、demoUrl、status 等字段。
+- 精选项目：featured 字段；每个 slug 自动生成详情页。
+- 文章：src/content/posts/*.md；frontmatter 包含 title、date、summary、tags，可选 updated。
+- 未完成状态：原文含 TODO、占位或待补充时，展示未完成提示，不进入首页精选。文章正文不被改写。
+- 数学公式：支持美元符号包裹的行内公式和双美元符号包裹的块公式，构建时用 KaTeX 渲染。
+- 课程、实验与短思考：保留在 /learning，真实性待本人确认。
+- 站点地图：自动从路由、项目与文章生成，不需手工维护。
+- 图片：放在 public 下，数据记录不带 basePath 的绝对路径；展示组件用 assetPath 添加部署子路径。
+
+## 发布边界
+
+GitHub Actions 原有流程保留：推送 codex/portfolio-site 分支会构建并部署 GitHub Pages。发布须经本人授权；推送该分支后由 GitHub Actions 构建并部署。
+
+配置的网站地址：https://20163070.github.io/student-portfolio/ 。
+
+## 内容真实性
+
+详见 docs/content-audit.md。仓库结构与个人贡献分别表述，不引用未复现的性能与用户数。OpenCode 贡献按本人要求不展示。

@@ -15,16 +15,28 @@ export function MobileMenu({ items }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="sm:hidden">
+    <div
+      className="lg:hidden"
+      onKeyDown={(event) => {
+        if (event.key === "Escape") setOpen(false);
+      }}
+    >
       <button
         className="rounded-full border border-ink/15 px-4 py-2 text-sm font-black text-ink"
         onClick={() => setOpen((value) => !value)}
+        aria-expanded={open}
+        aria-controls="mobile-navigation"
+        aria-label="主导航菜单"
         type="button"
       >
         Menu
       </button>
       {open ? (
-        <div className="absolute left-5 right-5 top-20 z-20 rounded-[1.5rem] border border-ink/10 bg-paper p-5 shadow-soft">
+        <nav
+          id="mobile-navigation"
+          aria-label="移动端主导航"
+          className="absolute left-5 right-5 top-20 z-20 rounded-[1.5rem] border border-ink/10 bg-paper p-5 shadow-soft"
+        >
           <div className="grid gap-3">
             {items.map((item) => (
               <Link
@@ -38,7 +50,7 @@ export function MobileMenu({ items }: MobileMenuProps) {
             ))}
             <ThemeToggle />
           </div>
-        </div>
+        </nav>
       ) : null}
     </div>
   );

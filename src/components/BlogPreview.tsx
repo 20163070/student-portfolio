@@ -3,16 +3,18 @@ import { getAllPosts } from "@/lib/posts";
 import { PostCard } from "@/components/PostCard";
 
 export function BlogPreview() {
-  const posts = getAllPosts().slice(0, 3);
+  const posts = getAllPosts()
+    .filter((post) => !post.unfinished)
+    .slice(0, 3);
 
   return (
     <section id="blog" className="section-shell">
-      <p className="section-kicker">Blog</p>
+      <p className="section-kicker">Technical Writing</p>
       <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h2 className="section-title">教程和学习笔记</h2>
-          <p className="mt-3 max-w-2xl text-sm leading-6 text-ink/60">
-            长教程用 Markdown 写，比如 ICS Lab 踩坑、项目复盘和课程总结。
+          <h2 className="section-title">技术写作</h2>
+          <p className="mt-3 max-w-2xl text-sm leading-6 text-ink/70">
+            把问题拆开，把思路写清楚。留下一段代码，也留下理解它的过程。
           </p>
         </div>
         <Link className="text-sm font-black text-clay" href="/blog">
@@ -20,7 +22,9 @@ export function BlogPreview() {
         </Link>
       </div>
 
-      <div className="grid gap-5 md:grid-cols-3">
+      <div
+        className={`grid gap-5 ${posts.length > 1 ? "md:grid-cols-2" : "max-w-3xl"}`}
+      >
         {posts.map((post) => (
           <PostCard key={post.slug} post={post} />
         ))}

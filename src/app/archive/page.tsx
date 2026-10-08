@@ -3,7 +3,10 @@ import { Navbar } from "@/components/Navbar";
 import { getPostsByYear } from "@/lib/posts";
 
 export const metadata = {
-  title: "Archive | 学生学习档案",
+  alternates: {
+    canonical: "https://20163070.github.io/student-portfolio/archive/",
+  },
+  title: "Archive",
   description: "按年份归档的博客文章。",
 };
 
@@ -16,9 +19,7 @@ export default function ArchivePage() {
       <Navbar />
       <section className="section-shell">
         <p className="section-kicker">Archive</p>
-        <h1 className="font-[var(--font-display)] text-5xl font-black text-ink sm:text-6xl">
-          文章归档
-        </h1>
+        <h1 className="text-5xl font-black text-ink sm:text-6xl">文章归档</h1>
         <div className="mt-12 space-y-10">
           {years.map((year) => (
             <section className="grid gap-5 md:grid-cols-[160px_1fr]" key={year}>
@@ -30,8 +31,12 @@ export default function ArchivePage() {
                     href={`/blog/${post.slug}`}
                     key={post.slug}
                   >
-                    <span className="text-sm font-bold text-ink/45">{post.date}</span>
-                    <h3 className="mt-2 text-2xl font-black text-ink">{post.title}</h3>
+                    <span className="text-sm font-bold text-ink/70">
+                      {post.date}
+                    </span>
+                    <h3 className="mt-2 text-2xl font-black text-ink">
+                      {post.title}
+                    </h3>
                   </Link>
                 ))}
               </div>

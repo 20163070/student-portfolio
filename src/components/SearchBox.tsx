@@ -24,14 +24,21 @@ export function SearchBox({ posts }: { posts: PostMeta[] }) {
 
   return (
     <div className="mt-10">
+      <label className="sr-only" htmlFor="post-search">
+        搜索文章标题、摘要和标签
+      </label>
       <input
-        className="w-full rounded-full border border-ink/10 bg-paper px-6 py-4 text-lg font-semibold text-ink outline-none transition placeholder:text-ink/35 focus:border-clay"
+        id="post-search"
+        className="w-full rounded-full border border-ink/10 bg-paper px-6 py-4 text-lg font-semibold text-ink outline-none transition placeholder:text-ink/70 focus:border-clay"
         onChange={(event) => setQuery(event.target.value)}
         placeholder="搜索 ICS、Lab、React、项目复盘..."
         type="search"
         value={query}
       />
 
+      <p className="mt-4 text-sm text-ink/70" role="status">
+        找到 {results.length} 篇文章
+      </p>
       <div className="mt-8 space-y-4">
         {results.map((post) => (
           <article
@@ -43,6 +50,7 @@ export function SearchBox({ posts }: { posts: PostMeta[] }) {
               href={`/blog/${post.slug}`}
             >
               {post.title}
+              {post.unfinished ? " · 未完成笔记" : ""}
             </Link>
             <p className="mt-3 leading-7 text-ink/68">{post.summary}</p>
           </article>

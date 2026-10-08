@@ -1,6 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import { toString } from "mdast-util-to-string";
 
 const postsDirectory = path.join(process.cwd(), "src/content/posts");
 
@@ -13,6 +18,8 @@ export type PostMeta = {
   tags: string[];
   readingTime: string;
   year: string;
+  unfinished: boolean;
+  reviewNote?: string;
 };
 
 export type Post = PostMeta & {
@@ -62,16 +69,19 @@ function getMarkdownFiles() {
 
 function getHeadings(content: string) {
   const counts = new Map<string, number>();
-
-  return content
-    .split("\n")
-    .map((line) => /^(#{2,3})\s+(.+)$/.exec(line))
-    .filter((match): match is RegExpExecArray => Boolean(match))
-    .map((match) => ({
-      id: uniqueHeadingId(slugify(match[2]), counts),
-      text: match[2],
-      level: match[1].length,
-    }));
+  const tree = unified()
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkMath)
+    .parse(content);
+  return tree.children.flatMap((node) => {
+    if (node.type !== "heading" || (node.depth !== 2 && node.depth !== 3))
+      return [];
+    const text = toString(node);
+    return [
+      { id: uniqueHeadingId(slugify(text), counts), text, level: node.depth },
+    ];
+  });
 }
 
 export function getAllPosts(): PostMeta[] {
@@ -93,6 +103,11 @@ export function getAllPosts(): PostMeta[] {
           tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
           readingTime: estimateReadingTime(content),
           year: getYear(String(data.date ?? "")),
+          unfinished: /\bTODO\b|占位|待补充/.test(content),
+          reviewNote:
+            slug === "ics-data-lab-guide"
+              ? "原始学习笔记：内容与实验完成情况待本人复核。"
+              : undefined,
         };
       } catch {
         return {
@@ -103,6 +118,7 @@ export function getAllPosts(): PostMeta[] {
           tags: ["draft"],
           readingTime: "1 min read",
           year: "Unknown",
+          unfinished: true,
         };
       }
     })
@@ -130,6 +146,11 @@ export function getPostBySlug(slug: string): Post | null {
       tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
       readingTime: estimateReadingTime(content),
       year: getYear(String(data.date ?? "")),
+      unfinished: /\bTODO\b|占位|待补充/.test(content),
+      reviewNote:
+        slug === "ics-data-lab-guide"
+          ? "原始学习笔记：内容与实验完成情况待本人复核。"
+          : undefined,
       content,
       headings: getHeadings(content),
     };
@@ -141,9 +162,9 @@ export function getPostBySlug(slug: string): Post | null {
       "",
       "```md",
       "---",
-      "title: \"文章标题\"",
-      "date: \"2026-05-10\"",
-      "summary: \"一句话简介\"",
+      'title: "文章标题"',
+      'date: "2026-05-10"',
+      'summary: "一句话简介"',
       "tags:",
       "  - ICS",
       "---",
@@ -158,6 +179,7 @@ export function getPostBySlug(slug: string): Post | null {
       tags: ["draft"],
       readingTime: "1 min read",
       year: "Unknown",
+      unfinished: true,
       content,
       headings: getHeadings(content),
     };

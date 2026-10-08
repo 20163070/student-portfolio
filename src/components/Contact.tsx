@@ -1,19 +1,22 @@
+import { profile } from "@/data/profile";
 export function Contact() {
   return (
     <section id="contact" className="section-shell pb-24">
-      <div className="rounded-[2rem] border border-ink/10 bg-paper p-8 text-center shadow-soft sm:p-12">
+      <div className="rounded-2xl border border-ink/10 bg-paper p-8 sm:p-12">
         <p className="section-kicker">Contact</p>
-        <h2 className="section-title">一起做点有意思的东西</h2>
-        <p className="mx-auto mt-4 max-w-2xl leading-7 text-ink/68">
-          如果你想交流项目、课程学习或实习机会，可以通过邮箱联系我。
-          这里先放示例邮箱，部署前记得改成你自己的联系方式。
+        <h2 className="section-title">从一个技术问题开始交流。</h2>
+        <p className="mt-4 max-w-2xl leading-7 text-ink/70">
+          欢迎交流 Harness、算法与 AI
+          Infra，也欢迎讨论项目、实验室与技术实习机会。
         </p>
-        <a
-          className="mt-8 inline-flex rounded-full bg-clay px-6 py-3 text-sm font-black text-paper transition hover:-translate-y-0.5 hover:bg-ink"
-          href="mailto:student@example.com"
-        >
-          student@example.com
-        </a>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <a className="button-primary" href={"mailto:" + profile.email}>
+            {profile.email}
+          </a>
+          <a className="button-secondary" href={profile.githubUrl}>
+            GitHub / {profile.name} ↗
+          </a>
+        </div>
       </div>
     </section>
   );
