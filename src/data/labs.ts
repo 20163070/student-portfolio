@@ -8,12 +8,28 @@ export type Lab = {
   status?: string;
   tags?: string[];
   reportSlug?: string;
+  category?: "WisePen";
+  verificationLabel?: string;
 };
 
 export const labs: Lab[] = [
   {
+    title: "Lab 1A | Hello Frontend!",
+    course: "React 入门：从交互式计数器理解组件与状态管理",
+    category: "WisePen",
+    date: "2026-10-09",
+    summary:
+      "从初始值 0 开始，每次点击加 1；在线体验计数器，阅读真实核心代码与三道状态管理思考题解析。",
+    result: "组件、JSX / TSX、useState、事件处理、重新渲染与状态快照的关系。",
+    verificationLabel: "本地源码已核对 · 交互演示",
+    status: "计数器核心实现已检查 · 展示站点适配",
+    tags: ["WisePen", "Lab 1A", "React", "TypeScript", "State", "HeroUI"],
+    reportSlug: "wisepen-lab1a-hello-frontend",
+  },
+  {
     title: "WisePenCat Lab 0：在命令行通关 Git",
     course: "Git 与开源协作实践",
+    category: "WisePen",
     date: "2026-10-09",
     summary:
       "完成 Fork、克隆、本地运行、贡献者与头像提交，并记录网络、JSON 和 Windows 路径问题的排查。",

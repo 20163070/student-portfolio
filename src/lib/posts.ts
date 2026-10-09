@@ -24,6 +24,7 @@ export type PostMeta = {
 
 export type Post = PostMeta & {
   content: string;
+  demo?: "counter";
   headings: {
     id: string;
     text: string;
@@ -152,7 +153,13 @@ export function getPostBySlug(slug: string): Post | null {
           ? "原始学习笔记：内容与实验完成情况待本人复核。"
           : undefined,
       content,
-      headings: getHeadings(content),
+      demo: data.demo === "counter" ? "counter" : undefined,
+      headings: [
+        ...(data.demo === "counter"
+          ? [{ id: "counter-demo", text: "在线交互 Demo", level: 2 }]
+          : []),
+        ...getHeadings(content),
+      ],
     };
   } catch {
     const content = [

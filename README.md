@@ -102,6 +102,8 @@ npm run test:e2e
 
 ## 发布边界
 
+WisePen Lab 1A 入口为 `/learning/#wisepen`，详情为 `/blog/wisepen-lab1a-hello-frontend/`，分类复用 `/tags/WisePen/`。Markdown frontmatter 的 `demo: counter` 只启用预定义的 `CounterDemo` Client Component，不执行 Markdown 内的代码，也没有引入 MDX 或额外组件库。文章目录包含 Demo；搜索仍使用现有博客索引。公开实验源码在 https://github.com/20163070/wisepen-lab1a ，与网站内使用原生按钮的适配代码分别说明。见 `docs/lab1a-integration.md`。
+
 WisePenCat Lab 0 位于 `/learning/#labs`，报告复用 `/blog/wisepencat-lab0-git-workflow/`。维护数据在 `src/data/labs.ts`：`verified` 仅表示提交证据核验，`status` 另记完成与 PR 审核状态及核验日期；原有示例省略该字段，继续显示待确认。`reportSlug` 链接现有 Markdown 文章，标签、搜索与站点地图由博客管线自动生成。实验不加入 Projects 数据或项目数量。证据来源与历史故障记录的边界见文章；原始 PDF 不公开上传。
 
 GitHub Actions 原有流程保留：推送 codex/portfolio-site 分支会构建并部署 GitHub Pages。发布须经本人授权；推送该分支后由 GitHub Actions 构建并部署。

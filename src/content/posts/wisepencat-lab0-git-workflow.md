@@ -4,6 +4,7 @@ date: "2026-10-09"
 updated: "2026-10-09"
 summary: "WisePenCat Lab 0 的 Git / GitHub 命令行实践：从 Fork 到 PR，记录 Version Control 状态变化、网络连接、JSON 与 Windows 路径故障。"
 tags:
+  - WisePen
   - Git
   - GitHub
   - CLI

@@ -10,6 +10,7 @@ import Image from "next/image";
 import { assetPath, siteUrl } from "@/lib/site";
 import { Navbar } from "@/components/Navbar";
 import { getAllPosts, getPostBySlug } from "@/lib/posts";
+import { CounterDemo } from "@/components/CounterDemo";
 
 function slugify(text: string) {
   return text
@@ -98,7 +99,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  let headingIndex = 0;
+  let headingIndex = post.demo ? 1 : 0;
 
   return (
     <main>
@@ -145,6 +146,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               未完成笔记：原文仍含 TODO
               或待补充内容，保留作为学习过程记录，不作为完整教程或已验证成果。
             </p>
+          )}
+          {post.demo === "counter" && (
+            <section aria-labelledby="counter-demo" className="mt-10">
+              <h2 id="counter-demo" className="text-2xl font-black text-ink">
+                在线交互 Demo
+              </h2>
+              <p className="mt-3 leading-7 text-ink/70">
+                沿用实验的 useState
+                与函数式更新，按钮和样式适配当前网站。原实验代码使用
+                HeroUI，本演示使用原生按钮。
+              </p>
+              <CounterDemo />
+            </section>
           )}
           <div className="prose-blog mt-12">
             <ReactMarkdown
