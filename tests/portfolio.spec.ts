@@ -195,6 +195,7 @@ test("key pages meet automated WCAG A/AA checks in both themes", async ({
       "/projects/student-portfolio/",
       "/about/",
       "/blog/ics-data-lab-guide/",
+      "/blog/wisepencat-lab0-git-workflow/",
       "/learning/",
       "/blog/bomb-lab-tutorial/",
       "/search/",

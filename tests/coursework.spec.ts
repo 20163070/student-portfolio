@@ -169,7 +169,7 @@ test("unified search covers all types and keeps query/type through reload and hi
 }) => {
   await page.goto(prefix + "/search/");
   const results = page.locator("article");
-  await expect(results).toHaveCount(5);
+  await expect(results).toHaveCount(getSearchIndex().length);
   const types = page.getByRole("group", { name: "搜索内容类型" });
   await types.getByRole("button", { name: /^作业/ }).click();
   await expect(results).toHaveCount(2);
@@ -196,7 +196,9 @@ test("unified search covers all types and keeps query/type through reload and hi
     page.getByRole("link", { name: "Developer Portfolio", exact: true }),
   ).toBeVisible();
   await types.getByRole("button", { name: /^文章/ }).click();
-  await expect(results).toHaveCount(2);
+  await expect(results).toHaveCount(
+    getSearchIndex().filter((item) => item.kind === "blog").length,
+  );
   await search.fill("ICS");
   await expect(page.getByRole("link", { name: /Data Lab/ })).toBeVisible();
   await types.getByRole("button", { name: /^全部/ }).click();

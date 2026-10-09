@@ -18,16 +18,16 @@ export default function LearningPage() {
         <p className="section-kicker">Learning Archive</p>
         <h1 className="section-title">保留探索的过程</h1>
         <p className="mt-5 max-w-3xl leading-8 text-ink/70">
-          原有课程、实验和短思考保留在这里。下方课程、实验与思考条目来自原始网站，真实性、完成情况与作者归属待本人确认；暂不作为工程经历或成果。
+          这里保留技术文章、实验与学习过程。实验记录按证据分别标注，原有课程和短思考仍等待本人确认。
         </p>
       </section>
       <BlogPreview />
+      <Labs />
       <div>
         <p className="section-shell py-0 text-sm font-semibold text-clay">
           待确认档案 / 以下条目均未独立核实
         </p>
         <Courses />
-        <Labs />
         <Thoughts />
       </div>
     </main>

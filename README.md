@@ -56,7 +56,7 @@ npm run test:e2e
 - 文章：src/content/posts/*.md；frontmatter 包含 title、date、summary、tags，可选 updated。
 - 未完成状态：原文含 TODO、占位或待补充时，展示未完成提示，不进入首页精选。文章正文不被改写。
 - 数学公式：支持美元符号包裹的行内公式和双美元符号包裹的块公式，构建时用 KaTeX 渲染。
-- 课程、实验与短思考：保留在 /learning，真实性待本人确认。
+- 课程与短思考：保留在 /learning，真实性待本人确认。实验逐条标注：公开提交已核验的 Lab 与原有待确认示例分开。
 - 站点地图：自动从路由、项目与文章生成，不需手工维护。
 - 图片：放在 public 下，数据记录不带 basePath 的绝对路径；展示组件用 assetPath 添加部署子路径。
 
@@ -101,6 +101,8 @@ npm run test:e2e
 校验脚本使用 Node 的 TypeScript 类型剥离功能，建议 Node 22.18+。未引入数据库、服务端 API 或第三方搜索服务。
 
 ## 发布边界
+
+WisePenCat Lab 0 位于 `/learning/#labs`，报告复用 `/blog/wisepencat-lab0-git-workflow/`。维护数据在 `src/data/labs.ts`：`verified` 仅表示提交证据核验，`status` 另记完成与 PR 审核状态及核验日期；原有示例省略该字段，继续显示待确认。`reportSlug` 链接现有 Markdown 文章，标签、搜索与站点地图由博客管线自动生成。实验不加入 Projects 数据或项目数量。证据来源与历史故障记录的边界见文章；原始 PDF 不公开上传。
 
 GitHub Actions 原有流程保留：推送 codex/portfolio-site 分支会构建并部署 GitHub Pages。发布须经本人授权；推送该分支后由 GitHub Actions 构建并部署。
 

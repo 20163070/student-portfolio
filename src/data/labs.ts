@@ -4,9 +4,26 @@ export type Lab = {
   date: string;
   summary: string;
   result: string;
+  verified?: boolean;
+  status?: string;
+  tags?: string[];
+  reportSlug?: string;
 };
 
 export const labs: Lab[] = [
+  {
+    title: "WisePenCat Lab 0：在命令行通关 Git",
+    course: "Git 与开源协作实践",
+    date: "2026-10-09",
+    summary:
+      "完成 Fork、克隆、本地运行、贡献者与头像提交，并记录网络、JSON 和 Windows 路径问题的排查。",
+    result:
+      "区分工作区、暂存区、本地与远程仓库；通过两次提交完成一次可追溯的 GitHub 协作。",
+    verified: true,
+    status: "实验已完成 · PR 已提交，等待审核（2026-10-09 核验）",
+    tags: ["Git", "GitHub", "CLI", "Vite", "Version Control", "Open Source"],
+    reportSlug: "wisepencat-lab0-git-workflow",
+  },
   {
     title: "Lab 01：HTML 与 CSS 个人主页",
     course: "Web 开发基础",
