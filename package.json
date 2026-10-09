@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run validate:coursework && next build",
+    "validate:coursework": "node --experimental-strip-types scripts/validate-coursework.ts",
     "start": "node scripts/preview.mjs",
     "lint": "eslint .",
     "preview": "node scripts/preview.mjs",

@@ -181,6 +181,7 @@ test("mobile navigation, theme persistence, search and unfinished article state"
 test("key pages meet automated WCAG A/AA checks in both themes", async ({
   page,
 }) => {
+  test.setTimeout(120000);
   for (const dark of [false, true]) {
     await page.addInitScript(
       (dark) => localStorage.setItem("theme", dark ? "dark" : "light"),
@@ -190,6 +191,7 @@ test("key pages meet automated WCAG A/AA checks in both themes", async ({
       "/",
       "/coursework/",
       "/coursework/corporate-finance-homework-1/",
+      "/coursework/sets-and-graph-theory-09-29/",
       "/projects/student-portfolio/",
       "/about/",
       "/blog/ics-data-lab-guide/",

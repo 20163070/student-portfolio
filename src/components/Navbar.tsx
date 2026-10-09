@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MobileMenu } from "@/components/MobileMenu";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { NavLink } from "@/components/NavLink";
 
 const navItems = [
   { label: "Blog", href: "/blog" },
@@ -33,13 +34,13 @@ export function Navbar() {
         className="hidden items-center gap-6 font-mono text-xs font-semibold text-ink/70 lg:flex"
       >
         {navItems.map((item) => (
-          <Link
+          <NavLink
             className="transition hover:text-clay"
             href={item.href}
             key={item.href}
           >
             {item.label}
-          </Link>
+          </NavLink>
         ))}
         <ThemeToggle />
       </nav>

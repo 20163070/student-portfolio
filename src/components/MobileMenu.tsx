@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { NavLink } from "./NavLink";
 import { useState } from "react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
@@ -35,18 +35,18 @@ export function MobileMenu({ items }: MobileMenuProps) {
         <nav
           id="mobile-navigation"
           aria-label="移动端主导航"
-          className="absolute left-5 right-5 top-20 z-20 rounded-[1.5rem] border border-ink/10 bg-paper p-5 shadow-soft"
+          className="absolute left-5 right-5 top-20 z-20 max-h-[calc(100dvh-6rem)] overflow-y-auto rounded-[1.5rem] border border-ink/10 bg-paper p-5 shadow-soft"
         >
           <div className="grid gap-3">
             {items.map((item) => (
-              <Link
+              <NavLink
                 className="rounded-2xl bg-cream px-4 py-3 text-sm font-black text-ink"
                 href={item.href}
                 key={item.href}
                 onClick={() => setOpen(false)}
               >
                 {item.label}
-              </Link>
+              </NavLink>
             ))}
             <ThemeToggle />
           </div>
