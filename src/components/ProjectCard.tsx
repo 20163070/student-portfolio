@@ -11,7 +11,8 @@ export function ProjectCard({ project }: { project: Project }) {
           <span className="text-clay" aria-hidden="true">
             ⌘{" "}
           </span>
-          repo / {project.slug}
+          {project.kind === "coursework" ? "coursework" : "repo"} /{" "}
+          {project.slug}
         </span>
         <span aria-hidden="true">↗</span>
       </div>
@@ -56,7 +57,10 @@ export function ProjectCard({ project }: { project: Project }) {
           <Link href={"/projects/" + project.slug}>{project.name}</Link>
         </h3>
         <p className="mt-4 leading-7 text-ink/70">{project.summary}</p>
-        <ul className="mt-5 flex flex-wrap gap-2" aria-label="技术栈">
+        <ul
+          className="mt-5 flex flex-wrap gap-2"
+          aria-label={project.kind === "coursework" ? "学习主题" : "技术栈"}
+        >
           {project.techStack.map((tech) => (
             <li
               className="rounded border border-ink/10 bg-cream px-2.5 py-1 font-mono text-xs font-semibold text-ink"
@@ -73,9 +77,16 @@ export function ProjectCard({ project }: { project: Project }) {
           <Link className="text-clay" href={"/projects/" + project.slug}>
             阅读项目案例 →
           </Link>
-          <a className="text-ink" href={project.githubUrl}>
-            源代码 ↗
-          </a>
+          {project.githubUrl && (
+            <a className="text-ink" href={project.githubUrl}>
+              源代码 ↗
+            </a>
+          )}
+          {project.documents?.[0] && (
+            <a className="text-ink" href={assetPath(project.documents[0].url)}>
+              查看解答 PDF ↗
+            </a>
+          )}
         </div>
       </div>
     </article>
