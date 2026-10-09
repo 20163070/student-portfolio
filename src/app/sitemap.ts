@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/data/projects";
+import { coursework } from "@/data/coursework";
 import { getAllPosts, getAllTags } from "@/lib/posts";
 import { siteUrl } from "@/lib/site";
 export const dynamic = "force-static";
@@ -8,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "",
     "/about",
     "/projects",
+    "/coursework",
     "/learning",
     "/blog",
     "/links",
@@ -15,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/search",
     "/tags",
     ...projects.map((p) => "/projects/" + p.slug),
+    ...coursework.map((p) => "/coursework/" + p.slug),
     ...getAllPosts().map((p) => "/blog/" + p.slug),
     ...getAllTags().map((tag) => "/tags/" + encodeURIComponent(tag)),
   ];

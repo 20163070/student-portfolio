@@ -32,6 +32,48 @@ const prefix = fs
   .includes("/student-portfolio/_next/")
   ? "/student-portfolio"
   : "";
+test("coursework is separate from homepage projects and has its own documents", async ({
+  page,
+  request,
+}) => {
+  for (const route of ["/", "/projects/"]) {
+    await page.goto(prefix + route);
+    await expect(
+      page.getByRole("link", { name: "公司金融 · Homework 1", exact: true }),
+    ).toHaveCount(0);
+  }
+  await page.goto(prefix + "/coursework/");
+  await page
+    .getByRole("link", { name: "公司金融 · Homework 1", exact: true })
+    .click();
+  await expect(page).toHaveURL(/\/coursework\/corporate-finance-homework-1\/$/);
+  await expect(page.getByRole("link", { name: "← 全部作业" })).toHaveAttribute(
+    "href",
+    prefix + "/coursework/",
+  );
+  const files = await page
+    .locator("#documents a[download]")
+    .evaluateAll((nodes) =>
+      nodes.map((node) => (node as HTMLAnchorElement).href),
+    );
+  expect(files).toHaveLength(3);
+  for (const url of files) {
+    const response = await request.get(url);
+    expect(response.status()).toBe(200);
+    expect((await response.body()).subarray(0, 5).toString()).toBe("%PDF-");
+  }
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.getByRole("button", { name: "主导航菜单" }).click();
+  await page.getByRole("link", { name: "作业", exact: true }).click();
+  await expect(
+    page.getByRole("heading", { name: "课程作业", exact: true }),
+  ).toBeVisible();
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBeTruthy();
+});
 test("exported pages, links, images and article anchors resolve under the deployment path", async ({
   page,
   request,
@@ -146,6 +188,8 @@ test("key pages meet automated WCAG A/AA checks in both themes", async ({
     );
     for (const route of [
       "/",
+      "/coursework/",
+      "/coursework/corporate-finance-homework-1/",
       "/projects/student-portfolio/",
       "/about/",
       "/blog/ics-data-lab-guide/",

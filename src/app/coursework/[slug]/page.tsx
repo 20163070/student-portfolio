@@ -1,29 +1,29 @@
 import { notFound } from "next/navigation";
 import { WorkDetail } from "@/components/WorkDetail";
-import { projects } from "@/data/projects";
+import { coursework } from "@/data/coursework";
 import { siteUrl } from "@/lib/site";
 type Props = { params: Promise<{ slug: string }> };
 export function generateStaticParams() {
-  return projects.map(({ slug }) => ({ slug }));
+  return coursework.map(({ slug }) => ({ slug }));
 }
 export const dynamicParams = false;
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  const p = projects.find((item) => item.slug === slug);
+  const p = coursework.find((item) => item.slug === slug);
   return {
-    title: p?.name ?? "项目不存在",
+    title: p?.name ?? "作业不存在",
     description: p?.summary,
-    alternates: { canonical: siteUrl + "/projects/" + slug + "/" },
+    alternates: { canonical: siteUrl + "/coursework/" + slug + "/" },
     openGraph: {
       title: p?.name,
       description: p?.summary,
-      url: siteUrl + "/projects/" + slug + "/",
+      url: siteUrl + "/coursework/" + slug + "/",
     },
   };
 }
-export default async function ProjectPage({ params }: Props) {
+export default async function CourseworkPage({ params }: Props) {
   const { slug } = await params;
-  const p = projects.find((item) => item.slug === slug);
+  const p = coursework.find((item) => item.slug === slug);
   if (!p) notFound();
   return <WorkDetail p={p} />;
 }

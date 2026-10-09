@@ -4,7 +4,7 @@ import { assetPath } from "@/lib/site";
 export const projectGroups = [
   {
     title: "Projects",
-    description: "个人项目与课程作品",
+    description: "个人项目与工程案例",
     items: projects.map((project) => ({
       name: project.name,
       description: project.summary,

@@ -51,6 +51,7 @@ npm run test:e2e
 
 - 个人资料：src/data/profile.ts。
 - 项目唯一数据源：src/data/projects.ts。支持 problem、myRole、techStack、architecture、challenges、results、screenshots、githubUrl、demoUrl、status 等字段。
+- 作业独立数据源：src/data/coursework.ts；列表和详情位于 /coursework，不进入首页精选、项目列表或项目数量统计。作业 PDF 放在 public/files 下。
 - 精选项目：featured 字段；每个 slug 自动生成详情页。
 - 文章：src/content/posts/*.md；frontmatter 包含 title、date、summary、tags，可选 updated。
 - 未完成状态：原文含 TODO、占位或待补充时，展示未完成提示，不进入首页精选。文章正文不被改写。

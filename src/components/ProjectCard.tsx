@@ -4,6 +4,9 @@ import type { Project } from "@/data/projects";
 import { assetPath } from "@/lib/site";
 export function ProjectCard({ project }: { project: Project }) {
   const shot = project.screenshots[0];
+  const href =
+    (project.kind === "coursework" ? "/coursework/" : "/projects/") +
+    project.slug;
   return (
     <article className="project-card flex min-w-0 flex-col overflow-hidden rounded-xl border border-ink/15 bg-paper transition-colors hover:border-clay/60">
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-ink/10 px-6 py-3 font-mono text-xs text-ink/70">
@@ -17,11 +20,7 @@ export function ProjectCard({ project }: { project: Project }) {
         <span aria-hidden="true">↗</span>
       </div>
       {shot ? (
-        <Link
-          href={"/projects/" + project.slug}
-          tabIndex={-1}
-          aria-hidden="true"
-        >
+        <Link href={href} tabIndex={-1} aria-hidden="true">
           <Image
             className="aspect-[16/10] w-full object-cover object-top"
             src={assetPath(shot.src)}
@@ -54,7 +53,7 @@ export function ProjectCard({ project }: { project: Project }) {
       <div className="flex flex-1 flex-col p-6 sm:p-8">
         <p className="text-xs font-semibold text-clay">{project.status}</p>
         <h3 className="mt-3 text-2xl font-bold tracking-tight text-ink">
-          <Link href={"/projects/" + project.slug}>{project.name}</Link>
+          <Link href={href}>{project.name}</Link>
         </h3>
         <p className="mt-4 leading-7 text-ink/70">{project.summary}</p>
         <ul
@@ -74,8 +73,8 @@ export function ProjectCard({ project }: { project: Project }) {
           {project.results[0]}
         </p>
         <div className="mt-6 flex flex-wrap gap-5 text-sm font-bold">
-          <Link className="text-clay" href={"/projects/" + project.slug}>
-            阅读项目案例 →
+          <Link className="text-clay" href={href}>
+            {project.kind === "coursework" ? "查看作业" : "阅读项目案例"} →
           </Link>
           {project.githubUrl && (
             <a className="text-ink" href={project.githubUrl}>
