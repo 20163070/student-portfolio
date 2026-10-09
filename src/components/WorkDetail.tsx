@@ -50,7 +50,7 @@ export function WorkDetail({ p }: { p: Project }) {
           )}
           {p.documents && (
             <a className="button-secondary" href="#documents">
-              作业题目与课程指南 ↓
+              题目与参考材料 ↓
             </a>
           )}
           {p.demoUrl && (
@@ -99,7 +99,7 @@ export function WorkDetail({ p }: { p: Project }) {
           ))}
           <section>
             <h2 className="text-2xl font-bold text-ink">
-              {coursework ? "手写解答预览 / Preview" : "项目截图 / Screenshots"}
+              {coursework ? "作业预览 / Preview" : "项目截图 / Screenshots"}
             </h2>
             {p.screenshots.length ? (
               p.screenshots.map((shot) => (
@@ -128,8 +128,7 @@ export function WorkDetail({ p }: { p: Project }) {
                 原始文件 / Documents
               </h2>
               <p className="mt-3 leading-7 text-ink/70">
-                解答为本人作品；作业题目与指南为课程材料。指南要求概念题每题不超过
-                100 词、按要点简答，计算题列出关键步骤和结果。
+                {p.documentNote ?? "原始作品与配套参考材料。"}
               </p>
               <ul className="mt-5 space-y-4">
                 {p.documents.map((document) => (
@@ -146,14 +145,14 @@ export function WorkDetail({ p }: { p: Project }) {
                         className="underline underline-offset-4"
                         href={assetPath(document.url)}
                       >
-                        查看 PDF ↗
+                        查看{document.url.endsWith(".pdf") ? " PDF" : "图片"} ↗
                       </a>
                       <a
                         className="underline underline-offset-4"
                         href={assetPath(document.url)}
                         download
                       >
-                        下载 PDF ↓
+                        下载{document.url.endsWith(".pdf") ? " PDF" : "图片"} ↓
                       </a>
                     </div>
                   </li>

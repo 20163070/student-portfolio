@@ -18,6 +18,7 @@ export type Project = {
   }[];
   githubUrl?: string;
   documents?: { label: string; url: string; description: string }[];
+  documentNote?: string;
   demoUrl?: string;
   status: string;
   featured: boolean;
