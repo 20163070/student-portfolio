@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc" width="1200" height="750" viewBox="0 0 1200 750">
+<title id="title">Silk Road Agent 三阶段工作流示意图</title>
+<desc id="desc">直播前准备、模拟直播中评论辅助、直播后内容生成三条独立流程。产品示意，不是真实运行截图。</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#131b29"/><stop offset="1" stop-color="#203044"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#e9b56a"/><stop offset="1" stop-color="#7fc5c6"/></linearGradient>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#fff" stroke-opacity=".055"/></pattern>
+</defs>
+<rect width="1200" height="750" fill="url(#bg)"/>
+<rect width="1200" height="750" fill="url(#grid)"/>
+<circle cx="1040" cy="75" r="210" fill="#65b4bf" opacity=".07"/>
+<circle cx="120" cy="760" r="300" fill="#edbb75" opacity=".06"/>
+<text x="72" y="91" font-family="Arial,sans-serif" font-size="22" letter-spacing="5" fill="#e9b56a">FEATURED / AI AGENT</text>
+<text x="70" y="175" font-family="Arial,sans-serif" font-size="64" font-weight="700" fill="#f6f0e5">SILK ROAD AGENT</text>
+<text x="73" y="221" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="26" fill="#c6d4d6">丝路跨境直播智能助理 · 三阶段独立体验</text>
+<rect x="71" y="268" width="1058" height="317" rx="28" fill="#f8f2e8" fill-opacity=".065" stroke="#d0e5e4" stroke-opacity=".2"/>
+<g font-family="Arial,'Microsoft YaHei',sans-serif">
+  <rect x="102" y="303" width="302" height="246" rx="18" fill="#263549" stroke="#a8c6d0" stroke-opacity=".25"/>
+  <circle cx="144" cy="347" r="18" fill="#e9b56a"/>
+  <text x="138" y="354" font-size="18" fill="#18232b" font-weight="700">1</text>
+  <text x="175" y="354" font-size="19" letter-spacing="2" fill="#e9b56a">PRE-LIVE</text>
+  <text x="130" y="406" font-size="29" font-weight="700" fill="#f4f1eb">直播前准备</text>
+  <text x="130" y="452" font-size="21" fill="#c6d4d6">文化故事 · 本地化话术</text>
+  <text x="130" y="489" font-size="21" fill="#c6d4d6">规则风险 · 直播方案</text>
+  <rect x="449" y="303" width="302" height="246" rx="18" fill="#263549" stroke="#a8c6d0" stroke-opacity=".25"/>
+  <circle cx="491" cy="347" r="18" fill="#7fc5c6"/>
+  <text x="485" y="354" font-size="18" fill="#18232b" font-weight="700">2</text>
+  <text x="522" y="354" font-size="19" letter-spacing="2" fill="#7fc5c6">IN-LIVE</text>
+  <text x="477" y="406" font-size="29" font-weight="700" fill="#f4f1eb">模拟直播间</text>
+  <text x="477" y="452" font-size="21" fill="#c6d4d6">模拟评论 · 意图分类</text>
+  <text x="477" y="489" font-size="21" fill="#c6d4d6">优先级 · 回复建议</text>
+  <rect x="796" y="303" width="302" height="246" rx="18" fill="#263549" stroke="#a8c6d0" stroke-opacity=".25"/>
+  <circle cx="838" cy="347" r="18" fill="#e9b56a"/>
+  <text x="832" y="354" font-size="18" fill="#18232b" font-weight="700">3</text>
+  <text x="869" y="354" font-size="19" letter-spacing="2" fill="#e9b56a">POST-LIVE</text>
+  <text x="824" y="406" font-size="29" font-weight="700" fill="#f4f1eb">直播后传播</text>
+  <text x="824" y="452" font-size="21" fill="#c6d4d6">多平台传播草稿</text>
+  <text x="824" y="489" font-size="21" fill="#c6d4d6">双语字幕模板</text>
+</g>
+<rect x="72" y="627" width="1056" height="1" fill="#ffffff" opacity=".15"/>
+<text x="72" y="671" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="22" fill="#c3d1d3">Python  /  Streamlit  /  Agent Workflow  /  Rules</text>
+<text x="1128" y="717" text-anchor="end" font-family="Arial,'Microsoft YaHei',sans-serif" font-size="17" fill="#e9b56a">产品示意图 · 非真实运行截图</text>
+</svg>
