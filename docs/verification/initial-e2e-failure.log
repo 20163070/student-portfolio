@@ -1,0 +1,1346 @@
+
+> student-portfolio@0.1.0 test:e2e
+> playwright test
+
+[WebServer] (node:67484) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 27 tests using 1 worker
+
+(node:58428) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\coursework.spec.ts:24:5 › metadata validation catches broken maintenance input and handles unknown dates (75ms)
+  ok  2 tests\coursework.spec.ts:100:5 › folder archive combines search and course filters, persists URL and handles empty results (2.7s)
+  ok  3 tests\coursework.spec.ts:167:5 › unified search covers all types and keeps query/type through reload and history (1.5s)
+  ok  4 tests\coursework.spec.ts:223:5 › old detail routes preserve assets, breadcrumbs and lazy PDF preview with fallback (1.4s)
+  ok  5 tests\coursework.spec.ts:284:5 › mobile archive keeps folder selection and active navigation accessible (1.4s)
+  ok  6 tests\lab0.spec.ts:11:5 › verified lab links to its report while examples stay unverified (4.0s)
+  ok  7 tests\lab0.spec.ts:62:5 › lab report is searchable by every requested keyword and readable on mobile in both themes (1.9s)
+  ok  8 tests\lab1a.spec.ts:11:5 › WisePen category reaches the interactive lab, tags and search (2.4s)
+  ok  9 tests\lab1a.spec.ts:81:5 › counter responds exactly once to clicks, Enter and Space and resets on reload (1.6s)
+  ok 10 tests\lab1a.spec.ts:106:5 › mobile and dark counter remain usable with no overflow or browser errors (2.2s)
+  ok 11 tests\portfolio.spec.ts:11:5 › Markdown renders inline and block mathematics with accessible MathML (513ms)
+  ok 12 tests\portfolio.spec.ts:35:5 › coursework is separate from homepage projects and has its own documents (1.3s)
+  ok 13 tests\portfolio.spec.ts:77:5 › exported pages, links, images and article anchors resolve under the deployment path (9.4s)
+  ok 14 tests\portfolio.spec.ts:132:5 › mobile navigation, theme persistence, search and unfinished article state (2.6s)
+  ok 15 tests\portfolio.spec.ts:181:5 › key pages meet automated WCAG A/AA checks in both themes (1.1m)
+  ok 16 tests\silk-road-agent.spec.ts:11:5 › Silk Road Agent is featured with correct external and internal actions (1.8s)
+  ok 17 tests\silk-road-agent.spec.ts:33:5 › details state the capability limits and have no inaccessible source link (1.6s)
+  ok 18 tests\silk-road-agent.spec.ts:65:5 › mobile details and project listing fit screen width (2.1s)
+  x  19 tests\silk-road-agent.spec.ts:89:9 › Agent layout and accessibility 390px light (6.7s)
+(node:62424) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 20 tests\silk-road-agent.spec.ts:89:9 › Agent layout and accessibility 390px dark (9.1s)
+  x  21 tests\silk-road-agent.spec.ts:89:9 › Agent layout and accessibility 768px light (6.8s)
+(node:64968) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 22 tests\silk-road-agent.spec.ts:89:9 › Agent layout and accessibility 768px dark (5.6s)
+  x  23 tests\silk-road-agent.spec.ts:89:9 › Agent layout and accessibility 1366px light (7.2s)
+(node:63500) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 24 tests\silk-road-agent.spec.ts:89:9 › Agent layout and accessibility 1366px dark (18.4s)
+  x  25 tests\silk-road-agent.spec.ts:89:9 › Agent layout and accessibility 1920px light (7.8s)
+(node:62148) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 26 tests\silk-road-agent.spec.ts:89:9 › Agent layout and accessibility 1920px dark (10.7s)
+  ok 27 tests\silk-road-agent.spec.ts:134:5 › Agent is searchable and exported with SEO metadata (1.4s)
+
+
+  1) tests\silk-road-agent.spec.ts:89:9 › Agent layout and accessibility 390px light ───────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -   1
+    + Received  + 303
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    +     "help": "Elements must meet minimum color contrast ratio thresholds",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=playwright",
+    +     "id": "color-contrast",
+    +     "impact": "serious",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#f8f4eb",
+    +               "contrastRatio": 3.74,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#807d75",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.74 (foreground color: #807d75, background color: #f8f4eb, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<html lang=\"zh-CN\">",
+    +                 "target": Array [
+    +                   "html",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.74 (foreground color: #807d75, background color: #f8f4eb, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-4 text-sm leading-6 text-ink/60\">公开 Demo 使用规则与模板，无需提供 API Key；匿名访问状态尚未独立核验。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".mt-10 > div > .text-ink\\/60.mt-4.leading-6",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 4.48,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#78756f",
+    +               "fontSize": "9.0pt (12px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 4.48 (foreground color: #78756f, background color: #fffcf6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<figure class=\"min-w-0 overflow-hidden rounded-2xl border border-ink/15 bg-paper shadow-soft\">",
+    +                 "target": Array [
+    +                   "figure",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 4.48 (foreground color: #78756f, background color: #fffcf6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<figcaption class=\"px-4 py-3 text-xs leading-5 text-ink/65\">产品流程示意图（非真实运行截图）。实际交互请打开在线 Demo。</figcaption>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "figcaption",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 3.84,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#83807a",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"flex flex-col rounded-2xl border border-ink/15 bg-paper p-6\">",
+    +                 "target": Array [
+    +                   ".flex-col.bg-paper.p-6:nth-child(1)",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-5 border-t border-ink/10 pt-4 text-sm leading-6 text-ink/60\">使用实际 Python 工作流，公开模式输出来自规则与模板。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".flex-col.bg-paper.p-6:nth-child(1) > .pt-4.border-ink\\/10.mt-5",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 3.84,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#83807a",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"flex flex-col rounded-2xl border border-ink/15 bg-paper p-6\">",
+    +                 "target": Array [
+    +                   ".flex-col.bg-paper.p-6:nth-child(2)",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-5 border-t border-ink/10 pt-4 text-sm leading-6 text-ink/60\">这是模拟评论，不是实时平台弹幕；词典外的句子明确标记为不支持翻译。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".flex-col.bg-paper.p-6:nth-child(2) > .pt-4.border-ink\\/10.mt-5",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 3.84,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#83807a",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"flex flex-col rounded-2xl border border-ink/15 bg-paper p-6\">",
+    +                 "target": Array [
+    +                   ".flex-col.bg-paper.p-6:nth-child(3)",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-5 border-t border-ink/10 pt-4 text-sm leading-6 text-ink/60\">仅提供待人工审核的传播草稿，不保证直接发布效果。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".flex-col.bg-paper.p-6:nth-child(3) > .pt-4.border-ink\\/10.mt-5",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 3.84,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#83807a",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"rounded-2xl border border-ink/15 bg-paper p-6\">",
+    +                 "target": Array [
+    +                   ".lg\\:grid-cols-\\[0\\.85fr_1\\.15fr\\] > .bg-paper.p-6.rounded-2xl:nth-child(1)",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-4 text-sm leading-6 text-ink/60\">公开模式：本地规则、内置数据与模板。无需访客提供 API Key，不调用外部大模型。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".bg-paper.p-6.rounded-2xl:nth-child(1) > .text-ink\\/60.mt-4.leading-6",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#eee7d9",
+    +               "contrastRatio": 3.61,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#7c776e",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.61 (foreground color: #7c776e, background color: #eee7d9, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<section class=\"mt-20 rounded-2xl border border-ink/15 bg-cream p-6 sm:p-9\">",
+    +                 "target": Array [
+    +                   ".sm\\:p-9",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.61 (foreground color: #7c776e, background color: #eee7d9, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-3 text-sm leading-7 text-ink/60\">待补充：本人负责的模块、代码或设计决策、具体遇到的工程问题与解决过程。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".text-ink\\/60.mt-3.leading-7",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#f8f4eb",
+    +               "contrastRatio": 4.3,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#76736c",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 4.3 (foreground color: #76736c, background color: #f8f4eb, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<html lang=\"zh-CN\">",
+    +                 "target": Array [
+    +                   "html",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 4.3 (foreground color: #76736c, background color: #f8f4eb, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-1 text-sm text-ink/65\">打开独立的 Streamlit 应用，体验真实交互流程。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".mt-1",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.color",
+    +       "wcag2aa",
+    +       "wcag143",
+    +       "TTv5",
+    +       "TT13.c",
+    +       "EN-301-549",
+    +       "EN-9.1.4.3",
+    +       "ACT",
+    +       "RGAAv4",
+    +       "RGAA-3.2.1",
+    +     ],
+    +   },
+    + ]
+
+      113 |               .analyze()
+      114 |           ).violations,
+    > 115 |         ).toEqual([]);
+          |           ^
+      116 |       }
+      117 |       await page.screenshot({
+      118 |         path: `test-results/agent-${width}-${theme}.png`,
+        at <workspace>/tests\silk-road-agent.spec.ts:115:11
+
+    Error Context: test-results\silk-road-agent-Agent-layout-and-accessibility-390px-light\error-context.md
+
+  2) tests\silk-road-agent.spec.ts:89:9 › Agent layout and accessibility 768px light ───────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -   1
+    + Received  + 303
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    +     "help": "Elements must meet minimum color contrast ratio thresholds",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=playwright",
+    +     "id": "color-contrast",
+    +     "impact": "serious",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#f8f4eb",
+    +               "contrastRatio": 3.74,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#807d75",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.74 (foreground color: #807d75, background color: #f8f4eb, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<html lang=\"zh-CN\">",
+    +                 "target": Array [
+    +                   "html",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.74 (foreground color: #807d75, background color: #f8f4eb, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-4 text-sm leading-6 text-ink/60\">公开 Demo 使用规则与模板，无需提供 API Key；匿名访问状态尚未独立核验。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".mt-10 > div > .text-ink\\/60.mt-4.leading-6",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 4.48,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#78756f",
+    +               "fontSize": "9.0pt (12px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 4.48 (foreground color: #78756f, background color: #fffcf6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<figure class=\"min-w-0 overflow-hidden rounded-2xl border border-ink/15 bg-paper shadow-soft\">",
+    +                 "target": Array [
+    +                   "figure",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 4.48 (foreground color: #78756f, background color: #fffcf6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<figcaption class=\"px-4 py-3 text-xs leading-5 text-ink/65\">产品流程示意图（非真实运行截图）。实际交互请打开在线 Demo。</figcaption>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "figcaption",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 3.84,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#83807a",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"flex flex-col rounded-2xl border border-ink/15 bg-paper p-6\">",
+    +                 "target": Array [
+    +                   ".flex-col.bg-paper.p-6:nth-child(1)",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-5 border-t border-ink/10 pt-4 text-sm leading-6 text-ink/60\">使用实际 Python 工作流，公开模式输出来自规则与模板。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".flex-col.bg-paper.p-6:nth-child(1) > .pt-4.border-ink\\/10.mt-5",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 3.84,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#83807a",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"flex flex-col rounded-2xl border border-ink/15 bg-paper p-6\">",
+    +                 "target": Array [
+    +                   ".flex-col.bg-paper.p-6:nth-child(2)",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-5 border-t border-ink/10 pt-4 text-sm leading-6 text-ink/60\">这是模拟评论，不是实时平台弹幕；词典外的句子明确标记为不支持翻译。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".flex-col.bg-paper.p-6:nth-child(2) > .pt-4.border-ink\\/10.mt-5",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 3.84,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#83807a",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"flex flex-col rounded-2xl border border-ink/15 bg-paper p-6\">",
+    +                 "target": Array [
+    +                   ".flex-col.bg-paper.p-6:nth-child(3)",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-5 border-t border-ink/10 pt-4 text-sm leading-6 text-ink/60\">仅提供待人工审核的传播草稿，不保证直接发布效果。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".flex-col.bg-paper.p-6:nth-child(3) > .pt-4.border-ink\\/10.mt-5",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 3.84,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#83807a",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"rounded-2xl border border-ink/15 bg-paper p-6\">",
+    +                 "target": Array [
+    +                   ".lg\\:grid-cols-\\[0\\.85fr_1\\.15fr\\] > .bg-paper.p-6.rounded-2xl:nth-child(1)",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-4 text-sm leading-6 text-ink/60\">公开模式：本地规则、内置数据与模板。无需访客提供 API Key，不调用外部大模型。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".bg-paper.p-6.rounded-2xl:nth-child(1) > .text-ink\\/60.mt-4.leading-6",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#eee7d9",
+    +               "contrastRatio": 3.61,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#7c776e",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.61 (foreground color: #7c776e, background color: #eee7d9, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<section class=\"mt-20 rounded-2xl border border-ink/15 bg-cream p-6 sm:p-9\">",
+    +                 "target": Array [
+    +                   ".sm\\:p-9",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.61 (foreground color: #7c776e, background color: #eee7d9, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-3 text-sm leading-7 text-ink/60\">待补充：本人负责的模块、代码或设计决策、具体遇到的工程问题与解决过程。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".text-ink\\/60.mt-3.leading-7",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#f8f4eb",
+    +               "contrastRatio": 4.3,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#76736c",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 4.3 (foreground color: #76736c, background color: #f8f4eb, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<html lang=\"zh-CN\">",
+    +                 "target": Array [
+    +                   "html",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 4.3 (foreground color: #76736c, background color: #f8f4eb, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-1 text-sm text-ink/65\">打开独立的 Streamlit 应用，体验真实交互流程。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".mt-1",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.color",
+    +       "wcag2aa",
+    +       "wcag143",
+    +       "TTv5",
+    +       "TT13.c",
+    +       "EN-301-549",
+    +       "EN-9.1.4.3",
+    +       "ACT",
+    +       "RGAAv4",
+    +       "RGAA-3.2.1",
+    +     ],
+    +   },
+    + ]
+
+      113 |               .analyze()
+      114 |           ).violations,
+    > 115 |         ).toEqual([]);
+          |           ^
+      116 |       }
+      117 |       await page.screenshot({
+      118 |         path: `test-results/agent-${width}-${theme}.png`,
+        at <workspace>/tests\silk-road-agent.spec.ts:115:11
+
+    Error Context: test-results\silk-road-agent-Agent-layout-and-accessibility-768px-light\error-context.md
+
+  3) tests\silk-road-agent.spec.ts:89:9 › Agent layout and accessibility 1366px light ──────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -   1
+    + Received  + 303
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    +     "help": "Elements must meet minimum color contrast ratio thresholds",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=playwright",
+    +     "id": "color-contrast",
+    +     "impact": "serious",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#f8f4eb",
+    +               "contrastRatio": 3.74,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#807d75",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.74 (foreground color: #807d75, background color: #f8f4eb, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<html lang=\"zh-CN\">",
+    +                 "target": Array [
+    +                   "html",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.74 (foreground color: #807d75, background color: #f8f4eb, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-4 text-sm leading-6 text-ink/60\">公开 Demo 使用规则与模板，无需提供 API Key；匿名访问状态尚未独立核验。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".mt-10 > div > .text-ink\\/60.mt-4.leading-6",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 4.48,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#78756f",
+    +               "fontSize": "9.0pt (12px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 4.48 (foreground color: #78756f, background color: #fffcf6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<figure class=\"min-w-0 overflow-hidden rounded-2xl border border-ink/15 bg-paper shadow-soft\">",
+    +                 "target": Array [
+    +                   "figure",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 4.48 (foreground color: #78756f, background color: #fffcf6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<figcaption class=\"px-4 py-3 text-xs leading-5 text-ink/65\">产品流程示意图（非真实运行截图）。实际交互请打开在线 Demo。</figcaption>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "figcaption",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 3.84,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#83807a",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"flex flex-col rounded-2xl border border-ink/15 bg-paper p-6\">",
+    +                 "target": Array [
+    +                   ".flex-col.bg-paper.p-6:nth-child(1)",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-5 border-t border-ink/10 pt-4 text-sm leading-6 text-ink/60\">使用实际 Python 工作流，公开模式输出来自规则与模板。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".flex-col.bg-paper.p-6:nth-child(1) > .pt-4.border-ink\\/10.mt-5",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 3.84,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#83807a",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"flex flex-col rounded-2xl border border-ink/15 bg-paper p-6\">",
+    +                 "target": Array [
+    +                   ".flex-col.bg-paper.p-6:nth-child(2)",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-5 border-t border-ink/10 pt-4 text-sm leading-6 text-ink/60\">这是模拟评论，不是实时平台弹幕；词典外的句子明确标记为不支持翻译。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".flex-col.bg-paper.p-6:nth-child(2) > .pt-4.border-ink\\/10.mt-5",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 3.84,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#83807a",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"flex flex-col rounded-2xl border border-ink/15 bg-paper p-6\">",
+    +                 "target": Array [
+    +                   ".flex-col.bg-paper.p-6:nth-child(3)",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-5 border-t border-ink/10 pt-4 text-sm leading-6 text-ink/60\">仅提供待人工审核的传播草稿，不保证直接发布效果。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".flex-col.bg-paper.p-6:nth-child(3) > .pt-4.border-ink\\/10.mt-5",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 3.84,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#83807a",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"rounded-2xl border border-ink/15 bg-paper p-6\">",
+    +                 "target": Array [
+    +                   ".lg\\:grid-cols-\\[0\\.85fr_1\\.15fr\\] > .bg-paper.p-6.rounded-2xl:nth-child(1)",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-4 text-sm leading-6 text-ink/60\">公开模式：本地规则、内置数据与模板。无需访客提供 API Key，不调用外部大模型。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".bg-paper.p-6.rounded-2xl:nth-child(1) > .text-ink\\/60.mt-4.leading-6",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#eee7d9",
+    +               "contrastRatio": 3.61,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#7c776e",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.61 (foreground color: #7c776e, background color: #eee7d9, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<section class=\"mt-20 rounded-2xl border border-ink/15 bg-cream p-6 sm:p-9\">",
+    +                 "target": Array [
+    +                   ".sm\\:p-9",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.61 (foreground color: #7c776e, background color: #eee7d9, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-3 text-sm leading-7 text-ink/60\">待补充：本人负责的模块、代码或设计决策、具体遇到的工程问题与解决过程。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".text-ink\\/60.mt-3.leading-7",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#f8f4eb",
+    +               "contrastRatio": 4.3,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#76736c",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 4.3 (foreground color: #76736c, background color: #f8f4eb, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<html lang=\"zh-CN\">",
+    +                 "target": Array [
+    +                   "html",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 4.3 (foreground color: #76736c, background color: #f8f4eb, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-1 text-sm text-ink/65\">打开独立的 Streamlit 应用，体验真实交互流程。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".mt-1",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.color",
+    +       "wcag2aa",
+    +       "wcag143",
+    +       "TTv5",
+    +       "TT13.c",
+    +       "EN-301-549",
+    +       "EN-9.1.4.3",
+    +       "ACT",
+    +       "RGAAv4",
+    +       "RGAA-3.2.1",
+    +     ],
+    +   },
+    + ]
+
+      113 |               .analyze()
+      114 |           ).violations,
+    > 115 |         ).toEqual([]);
+          |           ^
+      116 |       }
+      117 |       await page.screenshot({
+      118 |         path: `test-results/agent-${width}-${theme}.png`,
+        at <workspace>/tests\silk-road-agent.spec.ts:115:11
+
+    Error Context: test-results\silk-road-agent-Agent-layout-and-accessibility-1366px-light\error-context.md
+
+  4) tests\silk-road-agent.spec.ts:89:9 › Agent layout and accessibility 1920px light ──────────────
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -   1
+    + Received  + 303
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+    +     "help": "Elements must meet minimum color contrast ratio thresholds",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=playwright",
+    +     "id": "color-contrast",
+    +     "impact": "serious",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#f8f4eb",
+    +               "contrastRatio": 3.74,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#807d75",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.74 (foreground color: #807d75, background color: #f8f4eb, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<html lang=\"zh-CN\">",
+    +                 "target": Array [
+    +                   "html",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.74 (foreground color: #807d75, background color: #f8f4eb, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-4 text-sm leading-6 text-ink/60\">公开 Demo 使用规则与模板，无需提供 API Key；匿名访问状态尚未独立核验。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".mt-10 > div > .text-ink\\/60.mt-4.leading-6",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 4.48,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#78756f",
+    +               "fontSize": "9.0pt (12px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 4.48 (foreground color: #78756f, background color: #fffcf6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<figure class=\"min-w-0 overflow-hidden rounded-2xl border border-ink/15 bg-paper shadow-soft\">",
+    +                 "target": Array [
+    +                   "figure",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 4.48 (foreground color: #78756f, background color: #fffcf6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<figcaption class=\"px-4 py-3 text-xs leading-5 text-ink/65\">产品流程示意图（非真实运行截图）。实际交互请打开在线 Demo。</figcaption>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "figcaption",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 3.84,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#83807a",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"flex flex-col rounded-2xl border border-ink/15 bg-paper p-6\">",
+    +                 "target": Array [
+    +                   ".flex-col.bg-paper.p-6:nth-child(1)",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-5 border-t border-ink/10 pt-4 text-sm leading-6 text-ink/60\">使用实际 Python 工作流，公开模式输出来自规则与模板。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".flex-col.bg-paper.p-6:nth-child(1) > .pt-4.border-ink\\/10.mt-5",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 3.84,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#83807a",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"flex flex-col rounded-2xl border border-ink/15 bg-paper p-6\">",
+    +                 "target": Array [
+    +                   ".flex-col.bg-paper.p-6:nth-child(2)",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-5 border-t border-ink/10 pt-4 text-sm leading-6 text-ink/60\">这是模拟评论，不是实时平台弹幕；词典外的句子明确标记为不支持翻译。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".flex-col.bg-paper.p-6:nth-child(2) > .pt-4.border-ink\\/10.mt-5",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 3.84,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#83807a",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"flex flex-col rounded-2xl border border-ink/15 bg-paper p-6\">",
+    +                 "target": Array [
+    +                   ".flex-col.bg-paper.p-6:nth-child(3)",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-5 border-t border-ink/10 pt-4 text-sm leading-6 text-ink/60\">仅提供待人工审核的传播草稿，不保证直接发布效果。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".flex-col.bg-paper.p-6:nth-child(3) > .pt-4.border-ink\\/10.mt-5",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#fffcf6",
+    +               "contrastRatio": 3.84,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#83807a",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<div class=\"rounded-2xl border border-ink/15 bg-paper p-6\">",
+    +                 "target": Array [
+    +                   ".lg\\:grid-cols-\\[0\\.85fr_1\\.15fr\\] > .bg-paper.p-6.rounded-2xl:nth-child(1)",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.84 (foreground color: #83807a, background color: #fffcf6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-4 text-sm leading-6 text-ink/60\">公开模式：本地规则、内置数据与模板。无需访客提供 API Key，不调用外部大模型。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".bg-paper.p-6.rounded-2xl:nth-child(1) > .text-ink\\/60.mt-4.leading-6",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#eee7d9",
+    +               "contrastRatio": 3.61,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#7c776e",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 3.61 (foreground color: #7c776e, background color: #eee7d9, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<section class=\"mt-20 rounded-2xl border border-ink/15 bg-cream p-6 sm:p-9\">",
+    +                 "target": Array [
+    +                   ".sm\\:p-9",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 3.61 (foreground color: #7c776e, background color: #eee7d9, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-3 text-sm leading-7 text-ink/60\">待补充：本人负责的模块、代码或设计决策、具体遇到的工程问题与解决过程。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".text-ink\\/60.mt-3.leading-7",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": Object {
+    +               "bgColor": "#f8f4eb",
+    +               "contrastRatio": 4.3,
+    +               "expectedContrastRatio": "4.5:1",
+    +               "fgColor": "#76736c",
+    +               "fontSize": "10.5pt (14px)",
+    +               "fontWeight": "normal",
+    +               "messageKey": null,
+    +             },
+    +             "id": "color-contrast",
+    +             "impact": "serious",
+    +             "message": "Element has insufficient color contrast of 4.3 (foreground color: #76736c, background color: #f8f4eb, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<html lang=\"zh-CN\">",
+    +                 "target": Array [
+    +                   "html",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has insufficient color contrast of 4.3 (foreground color: #76736c, background color: #f8f4eb, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1",
+    +         "html": "<p class=\"mt-1 text-sm text-ink/65\">打开独立的 Streamlit 应用，体验真实交互流程。</p>",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".mt-1",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.color",
+    +       "wcag2aa",
+    +       "wcag143",
+    +       "TTv5",
+    +       "TT13.c",
+    +       "EN-301-549",
+    +       "EN-9.1.4.3",
+    +       "ACT",
+    +       "RGAAv4",
+    +       "RGAA-3.2.1",
+    +     ],
+    +   },
+    + ]
+
+      113 |               .analyze()
+      114 |           ).violations,
+    > 115 |         ).toEqual([]);
+          |           ^
+      116 |       }
+      117 |       await page.screenshot({
+      118 |         path: `test-results/agent-${width}-${theme}.png`,
+        at <workspace>/tests\silk-road-agent.spec.ts:115:11
+
+    Error Context: test-results\silk-road-agent-Agent-layout-and-accessibility-1920px-light\error-context.md
+
+  4 failed
+    tests\silk-road-agent.spec.ts:89:9 › Agent layout and accessibility 390px light ────────────────
+    tests\silk-road-agent.spec.ts:89:9 › Agent layout and accessibility 768px light ────────────────
+    tests\silk-road-agent.spec.ts:89:9 › Agent layout and accessibility 1366px light ───────────────
+    tests\silk-road-agent.spec.ts:89:9 › Agent layout and accessibility 1920px light ───────────────
+  23 passed (3.5m)

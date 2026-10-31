@@ -1,0 +1,65 @@
+export const commentEvidence = [
+  {
+    "text": "这个多少钱？",
+    "intent": "价格",
+    "priority": "high",
+    "confidence": "medium",
+    "translation": "[English] 这个多少钱？",
+    "translationStatus": "fallback_original",
+    "suggestedAction": "根据评论内容灵活回应。"
+  },
+  {
+    "text": "这个咖啡酸不酸？",
+    "intent": "口味",
+    "priority": "high",
+    "confidence": "medium",
+    "translation": "Is this coffee more acidic or bitter?",
+    "translationStatus": "dictionary",
+    "suggestedAction": "根据评论内容灵活回应。"
+  },
+  {
+    "text": "多久能到？",
+    "intent": "物流",
+    "priority": "high",
+    "confidence": "medium",
+    "translation": "[English] 多久能到？",
+    "translationStatus": "fallback_original",
+    "suggestedAction": "根据评论内容灵活回应。"
+  },
+  {
+    "text": "我想买这个",
+    "intent": "其他",
+    "priority": "medium",
+    "confidence": "low",
+    "translation": "[English] 我想买这个",
+    "translationStatus": "fallback_original",
+    "suggestedAction": "根据评论内容灵活回应。"
+  },
+  {
+    "text": "质量太差了",
+    "intent": "负面反馈",
+    "priority": "high",
+    "confidence": "medium",
+    "translation": "[English] 质量太差了",
+    "translationStatus": "fallback_original",
+    "suggestedAction": "建议主播快速响应，安抚情绪，引导私信客服解决具体问题。"
+  },
+  {
+    "text": "这个产地有什么故事？",
+    "intent": "文化兴趣",
+    "priority": "medium",
+    "confidence": "high",
+    "translation": "What's the story behind this origin?",
+    "translationStatus": "dictionary",
+    "suggestedAction": "建议主播分享产品背后的国家故事、产地文化和丝路背景。"
+  },
+  {
+    "text": "火星量子香蕉",
+    "intent": "口味",
+    "priority": "high",
+    "confidence": "medium",
+    "translation": "[English] 火星量子香蕉",
+    "translationStatus": "fallback_original",
+    "suggestedAction": "根据评论内容灵活回应。"
+  }
+] as const;

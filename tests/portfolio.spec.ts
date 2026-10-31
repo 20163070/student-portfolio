@@ -212,3 +212,19 @@ test("key pages meet automated WCAG A/AA checks in both themes", async ({
     }
   }
 });
+import katex from "katex";
+
+test("KaTeX ignores inherited trust options when rendering untrusted commands", () => {
+  const prototype = Object.prototype as { trust?: boolean };
+  const previous = Object.getOwnPropertyDescriptor(prototype, "trust");
+  try {
+    Object.defineProperty(prototype, "trust", { configurable: true, writable: true, value: true });
+    const html = katex.renderToString(String.raw`\href{https://untrusted.invalid/}{x}`, { throwOnError: false });
+    expect(html).not.toContain('href="https://untrusted.invalid/"');
+    expect(html).not.toContain("<a ");
+    expect(html).toContain("katex");
+  } finally {
+    if (previous) Object.defineProperty(prototype, "trust", previous);
+    else delete prototype.trust;
+  }
+});

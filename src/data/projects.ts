@@ -26,6 +26,48 @@ export type Project = {
 };
 export const projects: Project[] = [
   {
+    slug: "silk-road-agent",
+    name: "Silk Road Agent",
+    summary:
+      "丝路跨境直播智能助理。面向跨境主播，串联直播前准备、直播中评论辅助与直播后内容生成。",
+    problem:
+      "跨境主播需要将商品文化转译为适合目标观众的表达，快速理解直播评论，并准备不同平台的传播内容。多工具切换与语言、文化和合规差异增加了准备和响应成本。",
+    myRole:
+      "团队项目。本人分工为技术 C：主播端展示面板与评论分类（本人提供）。本地快照已核实相关功能，个人提交与代码作者证据仍待补充；直播后文案为选做，贡献待确认。",
+    techStack: ["Python", "Streamlit", "Agent Workflow", "规则引擎"],
+    architecture: [
+      "输入商品信息或评论，经输入校验交给原有 Python Agent 工作流处理。",
+      "规则引擎、内置数据与模板产出结构化结果，由 Streamlit 展示并提供 Markdown 导出。",
+      "直播前方案、模拟直播评论处理、直播后传播草稿为三条可独立体验的流程。",
+      "公开 Demo 强制隔离外部模型请求，访客 Session 独立，错误反馈对外脱敏。",
+    ],
+    challenges: [
+      "将真实业务流程包装成无需配置 API Key 的公开体验，同时避免把模板输出冒充大模型能力。",
+      "限制评论输入长度、避免不安全文本渲染，保持不同访客的会话数据隔离。",
+      "兼顾 Windows 本地开发与 Linux Python 3.12 CI 环境。",
+    ],
+    results: [
+      "提供直播前、模拟直播中和直播后三条独立交互流程（根据项目交付说明）。",
+      "项目交付记录：7 项自动化集成测试通过，已完成桌面与手机尺寸的浏览器交互检查；作品集集成本身需另行验收。",
+      "公开演示使用本地规则与模板；词典以外的英文评论翻译明确提示不支持，市场评分仍待完善。",
+    ],
+    screenshots: [
+      {
+        src: "/images/projects/silk-road-agent-demo.png",
+        alt: "Silk Road Agent 真实运行首页：公开规则模板模式与三个独立工作流入口",
+        caption: "2026-10-31 匿名浏览器实拍：公开 Demo 首页，未展示个人数据；实际输出来自规则与模板。",
+        width: 1280,
+        height: 720,
+      },
+    ],
+    demoUrl:
+      "https://silk-road-agent-awwmpa4xozpwr2pkcpz6rn.streamlit.app/",
+    status: "交互 Demo · 团队项目",
+    featured: true,
+    evidence: [],
+  },
+
+  {
     slug: "student-portfolio",
     name: "Developer Portfolio",
     summary:
