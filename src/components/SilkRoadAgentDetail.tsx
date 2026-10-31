@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SilkRoadContribution } from "@/components/SilkRoadContribution";
 import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 import type { Project } from "@/data/projects";
@@ -265,6 +266,8 @@ export function SilkRoadAgentDetail({ project }: { project: Project }) {
             ))}
           </div>
         </section>
+
+        <SilkRoadContribution />
 
         <section id="verification" className="mt-20 scroll-mt-8">
           <p className="section-kicker">VERIFICATION / 验证与边界</p>

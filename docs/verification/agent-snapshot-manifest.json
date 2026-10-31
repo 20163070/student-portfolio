@@ -1,0 +1,35 @@
+{
+  "archives": {
+    "agent-master (1).zip": "46de8cdcc6ec738142b25e568951547ce7714cbd7bf39c2aba4f8b482251192d",
+    "agent-master (2).zip": "46de8cdcc6ec738142b25e568951547ce7714cbd7bf39c2aba4f8b482251192d",
+    "agent-master.zip": "2a5d67d8f48cce5d8e1754499fe0084f8fca304d6422a5ca0cef7847065b9673"
+  },
+  "selected": "agent-master (1).zip",
+  "develop_commit_verified": false,
+  "source_files_sha256": {
+    "app.py": "78a99fd688fdc333296aa975f3ff2cff0c010d6dc5ca0f9215a6d99b304641cc",
+    "src/modules/comment_intent.py": "b4ace5ade318fb2b49c0cfc2d206c0aacaae55e60d0441ba0fe3c3a59e8fc16c",
+    "src/modules/comment_translate.py": "5aa0ccea6fa89545836e9ed4c574e052112000a8b7c6d2b0b6b4425611eab896",
+    "src/modules/live_comment_assist.py": "866a46592a4e51651fd256caad0a2b56ca4d290fd5d6095b3c72be891ca0891b",
+    "src/modules/live_comment_panel.py": "21e68fdae584de07f7e3f47d9665331531e1f9e51ee023015449d865f7239b64",
+    "src/modules/short_video_copy.py": "b43084a472b7350a6aaf787de81d8982d41395b8e581cdd752feb16bd03aa02d",
+    "src/agent_workflow.py": "a6f44e9d5776520d9f194cdc17bdb5aecefb58a37c9edac6940348fb5b37068c",
+    "src/models.py": "8e02b7b7bdc5c8a98641c9ead9f92dc9b8fb86890dbdece0baf62155daaad170"
+  },
+  "post_execution_checks": {
+    "archives_unchanged": true,
+    "audited_source_files_unchanged": true,
+    "python_version": "3.14.6",
+    "source_ui_browser_tested": false,
+    "original_agent_tests_available": false,
+    "pydantic_version": "2.13.4",
+    "python_dotenv_version": "1.2.1"
+  },
+  "zip_commit_labels": {
+    "agent-master (1).zip": "366db2760ea4d48c5dbe211903fabe8656bffd07",
+    "agent-master (2).zip": "366db2760ea4d48c5dbe211903fabe8656bffd07",
+    "agent-master.zip": "18dbe7a9e81b732d8b06496caae226848bdd461c"
+  },
+  "git_metadata_note": "No .git directory or history; ZIP comments contain unverified commit labels.",
+  "git_history_available": false
+}

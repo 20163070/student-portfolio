@@ -152,3 +152,15 @@ test("Agent is searchable and exported with SEO metadata", async ({
     "/projects/silk-road-agent/",
   );
 });
+
+test("contribution evidence distinguishes task ownership and snapshot limitations", async ({ page }) => {
+  await page.goto(prefix + "/projects/silk-road-agent/");
+  const section = page.locator("#contribution-evidence");
+  await expect(section.getByRole("heading", { name: "技术 C：主播端展示面板 + 评论分类" })).toBeVisible();
+  await expect(section.locator("article")).toHaveCount(7);
+  await expect(section.getByText("我想买这个", { exact: true })).toBeVisible();
+  await expect(section.getByText("其他 · medium · confidence: low", { exact: true })).toBeVisible();
+  await expect(section.getByText("[English] 火星量子香蕉", { exact: true })).toBeVisible();
+  await expect(section).toContainText("无法确认 develop Commit 或代码作者");
+  await expect(section).toContainText("我的选做贡献仍待确认");
+});
