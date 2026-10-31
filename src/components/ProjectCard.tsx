@@ -27,7 +27,7 @@ export function ProjectCard({ project }: { project: Project }) {
       {shot ? (
         <Link href={href} tabIndex={-1} aria-hidden="true">
           <Image
-            className="aspect-[16/10] w-full object-cover object-top"
+            className={isAgent ? "aspect-video w-full object-contain" : "aspect-[16/10] w-full object-cover object-top"}
             src={assetPath(shot.src)}
             alt={shot.alt}
             width={shot.width}

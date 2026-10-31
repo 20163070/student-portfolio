@@ -1,0 +1,67 @@
+
+> student-portfolio@0.1.0 build
+> npm run validate:coursework && next build
+
+
+> student-portfolio@0.1.0 validate:coursework
+> node --experimental-strip-types scripts/validate-coursework.ts
+
+(node:52592) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///D:/Users/user/Documents/silk-road-review/scripts/validate-coursework.ts is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\D:\Users\user\Documents\silk-road-review\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Coursework validation passed: 2 assignments, 2 courses, 5 documents.
+   ▲ Next.js 15.5.27
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully in 41s
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/43) ...
+   Generating static pages (10/43) 
+   Generating static pages (21/43) 
+   Generating static pages (32/43) 
+ ✓ Generating static pages (43/43)
+   Finalizing page optimization ...
+   Collecting build traces ...
+   Exporting (0/2) ...
+ ✓ Exporting (2/2)
+
+Route (app)                                        Size  First Load JS
+┌ ○ /                                           1.28 kB         113 kB
+├ ○ /_not-found                                   992 B         104 kB
+├ ○ /about                                      1.28 kB         108 kB
+├ ○ /archive                                    1.28 kB         108 kB
+├ ○ /blog                                       1.28 kB         108 kB
+├ ● /blog/[slug]                                1.65 kB         113 kB
+├   ├ /blog/wisepen-lab1a-hello-frontend
+├   ├ /blog/wisepencat-lab0-git-workflow
+├   ├ /blog/bomb-lab-tutorial
+├   └ /blog/ics-data-lab-guide
+├ ○ /coursework                                 4.69 kB         111 kB
+├ ● /coursework/[slug]                          2.15 kB         114 kB
+├   ├ /coursework/sets-and-graph-theory-09-29
+├   └ /coursework/corporate-finance-homework-1
+├ ○ /learning                                   1.28 kB         108 kB
+├ ○ /links                                      1.26 kB         108 kB
+├ ○ /projects                                   1.28 kB         113 kB
+├ ● /projects/[slug]                            1.28 kB         113 kB
+├   ├ /projects/silk-road-agent
+├   └ /projects/student-portfolio
+├ ○ /search                                     2.98 kB         109 kB
+├ ○ /sitemap.xml                                  123 B         103 kB
+├ ○ /tags                                       1.28 kB         108 kB
+└ ● /tags/[tag]                                 1.28 kB         108 kB
+    ├ /tags/Assembly
+    ├ /tags/C
+    ├ /tags/CLI
+    └ [+18 more paths]
++ First Load JS shared by all                    103 kB
+  ├ chunks/255-09fb0d129bb12f51.js              46.6 kB
+  ├ chunks/4bd1b696-c023c6e3521b1417.js         54.2 kB
+  └ other shared chunks (total)                    2 kB
+
+
+○  (Static)  prerendered as static content
+●  (SSG)     prerendered as static HTML (uses generateStaticParams)
+

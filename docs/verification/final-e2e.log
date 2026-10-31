@@ -1,0 +1,40 @@
+
+> student-portfolio@0.1.0 test:e2e
+> playwright test
+
+[WebServer] (node:37256) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 27 tests using 1 worker
+
+(node:30604) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 tests\coursework.spec.ts:24:5 › metadata validation catches broken maintenance input and handles unknown dates (29ms)
+  ok  2 tests\coursework.spec.ts:100:5 › folder archive combines search and course filters, persists URL and handles empty results (1.6s)
+  ok  3 tests\coursework.spec.ts:167:5 › unified search covers all types and keeps query/type through reload and history (701ms)
+  ok  4 tests\coursework.spec.ts:223:5 › old detail routes preserve assets, breadcrumbs and lazy PDF preview with fallback (750ms)
+  ok  5 tests\coursework.spec.ts:284:5 › mobile archive keeps folder selection and active navigation accessible (642ms)
+  ok  6 tests\lab0.spec.ts:11:5 › verified lab links to its report while examples stay unverified (3.2s)
+  ok  7 tests\lab0.spec.ts:62:5 › lab report is searchable by every requested keyword and readable on mobile in both themes (934ms)
+  ok  8 tests\lab1a.spec.ts:11:5 › WisePen category reaches the interactive lab, tags and search (2.2s)
+  ok  9 tests\lab1a.spec.ts:81:5 › counter responds exactly once to clicks, Enter and Space and resets on reload (873ms)
+  ok 10 tests\lab1a.spec.ts:106:5 › mobile and dark counter remain usable with no overflow or browser errors (995ms)
+  ok 11 tests\portfolio.spec.ts:11:5 › Markdown renders inline and block mathematics with accessible MathML (203ms)
+  ok 12 tests\portfolio.spec.ts:35:5 › coursework is separate from homepage projects and has its own documents (823ms)
+  ok 13 tests\portfolio.spec.ts:77:5 › exported pages, links, images and article anchors resolve under the deployment path (4.9s)
+  ok 14 tests\portfolio.spec.ts:132:5 › mobile navigation, theme persistence, search and unfinished article state (1.2s)
+  ok 15 tests\portfolio.spec.ts:181:5 › key pages meet automated WCAG A/AA checks in both themes (21.2s)
+  ok 16 tests\silk-road-agent.spec.ts:11:5 › Silk Road Agent is featured with correct external and internal actions (575ms)
+  ok 17 tests\silk-road-agent.spec.ts:33:5 › details state the capability limits and have no inaccessible source link (424ms)
+  ok 18 tests\silk-road-agent.spec.ts:63:5 › mobile details and project listing fit screen width (646ms)
+  ok 19 tests\silk-road-agent.spec.ts:87:9 › Agent layout and accessibility 390px light (2.5s)
+  ok 20 tests\silk-road-agent.spec.ts:87:9 › Agent layout and accessibility 390px dark (2.6s)
+  ok 21 tests\silk-road-agent.spec.ts:87:9 › Agent layout and accessibility 768px light (2.6s)
+  ok 22 tests\silk-road-agent.spec.ts:87:9 › Agent layout and accessibility 768px dark (2.5s)
+  ok 23 tests\silk-road-agent.spec.ts:87:9 › Agent layout and accessibility 1366px light (3.4s)
+  ok 24 tests\silk-road-agent.spec.ts:87:9 › Agent layout and accessibility 1366px dark (2.8s)
+  ok 25 tests\silk-road-agent.spec.ts:87:9 › Agent layout and accessibility 1920px light (3.3s)
+  ok 26 tests\silk-road-agent.spec.ts:87:9 › Agent layout and accessibility 1920px dark (3.1s)
+  ok 27 tests\silk-road-agent.spec.ts:140:5 › Agent is searchable and exported with SEO metadata (639ms)
+
+  27 passed (1.2m)

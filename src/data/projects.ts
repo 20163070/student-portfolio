@@ -53,11 +53,11 @@ export const projects: Project[] = [
     ],
     screenshots: [
       {
-        src: "/images/projects/silk-road-agent-cover.svg",
-        alt: "丝路跨境直播智能助理工作流示意：直播前、模拟直播中、直播后三个独立入口；不是实际产品截图",
-        caption: "产品流程示意图（非真实运行截图）。实际交互请打开在线 Demo。",
-        width: 1200,
-        height: 750,
+        src: "/images/projects/silk-road-agent-demo.png",
+        alt: "Silk Road Agent 真实运行首页：公开规则模板模式与三个独立工作流入口",
+        caption: "2026-10-31 匿名浏览器实拍：公开 Demo 首页，未展示个人数据；实际输出来自规则与模板。",
+        width: 1280,
+        height: 720,
       },
     ],
     demoUrl:
