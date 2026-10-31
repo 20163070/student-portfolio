@@ -365,7 +365,7 @@ Running 27 tests using 1 worker
       116 |       }
       117 |       await page.screenshot({
       118 |         path: `test-results/agent-${width}-${theme}.png`,
-        at D:\Users\user\Documents\silk-road-review\tests\silk-road-agent.spec.ts:115:11
+        at <workspace>/tests\silk-road-agent.spec.ts:115:11
 
     Error Context: test-results\silk-road-agent-Agent-layout-and-accessibility-390px-light\error-context.md
 
@@ -688,7 +688,7 @@ Running 27 tests using 1 worker
       116 |       }
       117 |       await page.screenshot({
       118 |         path: `test-results/agent-${width}-${theme}.png`,
-        at D:\Users\user\Documents\silk-road-review\tests\silk-road-agent.spec.ts:115:11
+        at <workspace>/tests\silk-road-agent.spec.ts:115:11
 
     Error Context: test-results\silk-road-agent-Agent-layout-and-accessibility-768px-light\error-context.md
 
@@ -1011,7 +1011,7 @@ Running 27 tests using 1 worker
       116 |       }
       117 |       await page.screenshot({
       118 |         path: `test-results/agent-${width}-${theme}.png`,
-        at D:\Users\user\Documents\silk-road-review\tests\silk-road-agent.spec.ts:115:11
+        at <workspace>/tests\silk-road-agent.spec.ts:115:11
 
     Error Context: test-results\silk-road-agent-Agent-layout-and-accessibility-1366px-light\error-context.md
 
@@ -1334,7 +1334,7 @@ Running 27 tests using 1 worker
       116 |       }
       117 |       await page.screenshot({
       118 |         path: `test-results/agent-${width}-${theme}.png`,
-        at D:\Users\user\Documents\silk-road-review\tests\silk-road-agent.spec.ts:115:11
+        at <workspace>/tests\silk-road-agent.spec.ts:115:11
 
     Error Context: test-results\silk-road-agent-Agent-layout-and-accessibility-1920px-light\error-context.md
 

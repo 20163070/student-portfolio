@@ -1,0 +1,41 @@
+student-portfolio@0.1.0 <workspace>
+├─┬ @eslint/eslintrc@3.3.5
+│ └── minimatch@3.1.5
+├─┬ autoprefixer@10.5.0
+│ └── postcss@8.5.29 deduped
+├─┬ eslint-config-next@15.5.28
+│ ├─┬ @typescript-eslint/parser@8.59.1
+│ │ └─┬ @typescript-eslint/typescript-estree@8.59.1
+│ │   └── minimatch@10.2.5
+│ ├─┬ eslint-plugin-import@2.32.0
+│ │ └── minimatch@3.1.5 deduped
+│ ├─┬ eslint-plugin-jsx-a11y@6.10.2
+│ │ └── minimatch@3.1.5 deduped
+│ └─┬ eslint-plugin-react@7.37.5
+│   └── minimatch@3.1.5 deduped
+├─┬ eslint@9.39.4
+│ ├─┬ @eslint/config-array@0.21.2
+│ │ └── minimatch@3.1.5 deduped
+│ └── minimatch@3.1.5 deduped
+├── katex@0.18.2
+├─┬ next@15.5.28
+│ └── postcss@8.5.29 deduped
+├── postcss@8.5.29
+├─┬ rehype-katex@7.0.1
+│ └── katex@0.18.2 deduped
+├─┬ remark-math@6.0.0
+│ └─┬ micromark-extension-math@3.1.0
+│   └── katex@0.18.2 deduped
+└─┬ tailwindcss@3.4.19
+  ├─┬ postcss-import@15.1.0
+  │ └── postcss@8.5.29 deduped
+  ├─┬ postcss-js@4.1.0
+  │ └── postcss@8.5.29 deduped
+  ├─┬ postcss-load-config@6.0.1
+  │ └── postcss@8.5.29 deduped
+  ├─┬ postcss-nested@6.2.0
+  │ ├── postcss-selector-parser@6.1.5 deduped
+  │ └── postcss@8.5.29 deduped
+  ├── postcss-selector-parser@6.1.5
+  └── postcss@8.5.29 deduped
+

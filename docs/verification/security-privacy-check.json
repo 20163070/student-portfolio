@@ -1,0 +1,6 @@
+{
+  "scope": "current docs/verification text logs, audit JSON and PNG metadata; screenshots also visually reviewed",
+  "path_or_credential_pattern_findings": [],
+  "png_text_or_exif_metadata": [],
+  "historical_commits_rewritten": false
+}

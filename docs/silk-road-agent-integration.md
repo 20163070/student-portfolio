@@ -64,6 +64,9 @@ npm ci 报告 7 项漏洞（4 low / 1 moderate / 1 high / 1 critical），详情
 | Pages npm run test:e2e | PASS | verification/pages-e2e.log，27 passed |
 | Agent 原有 7 项测试复跑 / Windows + Linux CI | NOT VERIFIED | 未提供 Agent 源码与原始日志；与本次作品网站测试区分 |
 
-发布判断：**NOT READY**。作品网站的 Pages 集成验收通过，外部 Demo 匿名抽样交互通过；仍需复核现有严重依赖告警、补充个人贡献与团队署名、提供工程决策及 Agent 原始测试材料。未合并或部署。
+首次集成验收判断（历史记录）：**NOT READY**。作品网站的 Pages 集成验收通过，外部 Demo 匿名抽样交互通过；仍需复核现有严重依赖告警、补充个人贡献与团队署名、提供工程决策及 Agent 原始测试材料。未合并或部署。
 
 最终普通路径复测：npm run build PASS；npm run test:e2e **27 passed**；退出码 build=0 / e2e=0，证据见 verification/final-build.log、final-e2e.log、final-runtime-status.log。该次构建包含真实截图和全部对比度修复。Pages 与普通路径共两轮最终完整回归均通过。
+
+
+后续安全修复已完成：最新技术状态为 READY TO MERGE，完整漏洞矩阵、残余 minimatch 中危风险及 28×2 回归见 [安全报告](silk-road-agent-security.md)。旧审计数据保留为历史证据；个人贡献和 Agent 原始测试待核验披露继续有效。
